@@ -17,3 +17,6 @@ Thumbs.db
 data/
 !src/main/resources/data/
 *.log
+
+# Local opencode runtime
+.opencode/
