@@ -1,0 +1,58 @@
+@startuml use-case-diagram
+' Diagrama de casos de uso — Sistema de Información Geográfica (SIG)
+' Correspondencia con docs/use-cases.md (UC-01..UC-08) y specs/.../spec.md (US1..US3, FR-001..FR-036)
+
+left to right direction
+skinparam actorStyle awesome
+skinparam usecase {
+    BackgroundColor #E8F0FE
+    BorderColor #1F6FEB
+    ArrowColor #444444
+}
+skinparam packageStyle rectangle
+
+actor "Usuario" as Usuario
+actor "Usuario de\nconsulta" as Consulta
+actor "Administrador" as Administrador
+Consulta -up-|> Usuario
+Administrador -up-|> Usuario
+
+rectangle "Sistema de Información Geográfica" {
+    usecase "Autenticarse\n(UC-01)" as CU01
+    usecase "Explorar entidades\nen el mapa (UC-02)" as CU02
+    usecase "Consultar entidades\n(UC-06)" as CU03
+    usecase "Ver detalle de una\nentidad (UC-02)" as CU04
+    usecase "Listar categorías\n(UC-07)" as CU05
+    usecase "Cargar mapa base\nlocal (UC-08)" as CU06
+    usecase "Registrar una\nentidad (UC-03)" as CU07
+    usecase "Actualizar una\nentidad (UC-04)" as CU08
+    usecase "Eliminar una\nentidad (UC-05)" as CU09
+}
+
+Usuario --> CU01
+Consulta --> CU02
+Consulta --> CU03
+Consulta --> CU04
+Consulta --> CU05
+Consulta --> CU06
+
+Administrador --> CU02
+Administrador --> CU03
+Administrador --> CU04
+Administrador --> CU05
+Administrador --> CU06
+Administrador --> CU07
+Administrador --> CU08
+Administrador --> CU09
+
+' Relaciones de inclusión y extensión
+CU01 ..> CU02 : <<include>>\nsesión activa requerida
+CU03 ..> CU02 : <<include>>\nresultados visibles en el mapa
+CU02 ..> CU06 : <<include>>\nrequiere mapa base local
+CU04 ..> CU03 : <<include>>\nselección sobre resultados
+
+CU07 ..> CU03 : <<extend>>\nvalida con consulta previa
+CU08 ..> CU03 : <<extend>>\nselecciona entidad existente
+CU09 ..> CU03 : <<extend>>\nselecciona entidad existente
+
+@enduml

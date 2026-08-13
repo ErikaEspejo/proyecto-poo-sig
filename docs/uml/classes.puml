@@ -1,0 +1,365 @@
+@startuml class-diagram
+' Diagrama de clases COMPLETO — Sistema de Información Geográfica (SIG)
+' Refleja la implementación real en src/main/java/edu/udistrital/sig/
+' Capas: domain (independiente), application (casos de uso), infrastructure (persistencia/web/seguridad)
+
+hide circle
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #1F6FEB
+}
+skinparam packageStyle rectangle
+
+package "Dominio (domain)" {
+    package "domain.model" {
+        class Coordinate <<record>> {
+            +latitude : double
+            +longitude : double
+            +{static} ofLonLat(double, double) : Coordinate
+        }
+
+        abstract class Geometry {
+            +{abstract} type() : String
+            +{abstract} minDistanceToKm(Coordinate) : double
+        }
+
+        class Point {
+            -coordinate : Coordinate
+            +coordinate() : Coordinate
+        }
+
+        class LineString {
+            -coordinates : List~Coordinate~
+            +coordinates() : List~Coordinate~
+        }
+
+        class Polygon {
+            -ring : List~Coordinate~
+            +ring() : List~Coordinate~
+        }
+
+        class GeoMath <<utility>> {
+            +EARTH_RADIUS_KM : double
+            +KM_PER_LATITUDE_DEGREE : double
+            +KM_PER_LONGITUDE_DEGREE : double
+            +{static} haversineKm(Coordinate, Coordinate) : double
+            +{static} pointToSegmentDistanceKm(Coordinate, Coordinate, Coordinate) : double
+            +{static} pointInRing(Coordinate, List~Coordinate~) : boolean
+        }
+
+        class GeographicEntity {
+            -id : String
+            -name : String
+            -description : String
+            -nature : EntityNature
+            -category : Category
+            -attributes : Map~String, String~
+            -geometry : Geometry
+            +{static} create(String, String, String, EntityNature, Category, Map~String, String~, Geometry) : GeographicEntity
+            +updatedWith(String, String, EntityNature, Category, Map~String, String~, Geometry) : GeographicEntity
+            +id() : String
+            +name() : String
+            +description() : String
+            +nature() : EntityNature
+            +category() : Category
+            +attributes() : Map~String, String~
+            +geometry() : Geometry
+        }
+
+        enum EntityNature {
+            POINT_OF_INTEREST
+            ROAD
+            NEIGHBORHOOD
+            INSTITUTION
+            COMMERCIAL_ESTABLISHMENT
+            ZONE_OF_INTEREST
+        }
+
+        class Category <<record>> {
+            +id : String
+            +name : String
+        }
+
+        enum Role {
+            CONSULTATION
+            ADMINISTRATOR
+            +canModifyEntities() : boolean
+        }
+
+        class User <<record>> {
+            +username : String
+            +passwordHash : String
+            +role : Role
+        }
+    }
+
+    package "domain.exception" {
+        class RuntimeException
+        class InvalidGeometryException <<exception>>
+        class InvalidEntityException <<exception>>
+        class EntityNotFoundException <<exception>>
+        class InvalidCredentialsException <<exception>>
+        class AuthenticationRequiredException <<exception>>
+        class UnauthorizedOperationException <<exception>>
+
+        RuntimeException <|-- InvalidGeometryException
+        RuntimeException <|-- InvalidEntityException
+        RuntimeException <|-- EntityNotFoundException
+        RuntimeException <|-- InvalidCredentialsException
+        RuntimeException <|-- AuthenticationRequiredException
+        RuntimeException <|-- UnauthorizedOperationException
+    }
+
+    package "domain.repository" {
+        interface EntityRepository {
+            +findAll() : List~GeographicEntity~
+            +findById(String) : Optional~GeographicEntity~
+            +save(GeographicEntity) : GeographicEntity
+            +delete(String) : void
+        }
+
+        interface CategoryRepository {
+            +findAll() : List~Category~
+            +findById(String) : Optional~Category~
+        }
+
+        interface UserRepository {
+            +findByUsername(String) : Optional~User~
+        }
+    }
+}
+
+package "Aplicación (application)" {
+    package "application.service" {
+        class EntityService {
+            +findAll() : List~GeographicEntity~
+            +findById(String) : Optional~GeographicEntity~
+            +create(GeographicEntity, Role) : GeographicEntity
+            +update(String, GeographicEntity, Role) : GeographicEntity
+            +delete(String, Role) : void
+        }
+
+        class QueryService {
+            +query(String, String, String, Double, Double, Double) : QueryResult
+        }
+
+        class QueryResult <<record>> {
+            +entities : List~GeographicEntity~
+            +matchedBy : String
+        }
+
+        class CategoryService {
+            +findAll() : List~Category~
+        }
+
+        class AuthService {
+            +login(String, String) : String
+            +resolve(String) : User
+        }
+
+        class TokenManager {
+            -tokens : Map~String, User~
+            +issue(User) : String
+            +resolve(String) : Optional~User~
+        }
+
+        interface PasswordHasher {
+            +hash(String) : String
+        }
+    }
+}
+
+package "Infraestructura (infrastructure)" {
+    package "infrastructure.persistence" {
+        class JsonDataStore {
+            -dataDirectory : Path
+            -mapper : ObjectMapper
+            +path(String) : Path
+            +exists(String) : boolean
+            +read(String) : JsonNode
+            +readArray(String) : ArrayNode
+            +write(String, JsonNode) : void
+        }
+
+        class EntityRepositoryJson {
+            -FILE_NAME : String
+        }
+
+        class CategoryRepositoryJson {
+            -FILE_NAME : String
+        }
+
+        class UserRepositoryJson {
+            -FILE_NAME : String
+        }
+
+        class SeedDataInitializer {
+            -SEED_FILES : List~String~
+            +run(ApplicationArguments) : void
+        }
+
+        class PersistenceException <<exception>>
+    }
+
+    package "infrastructure.codec" {
+        class EntityJsonCodec <<utility>> {
+            +{static} fromJson(JsonNode, Category) : GeographicEntity
+            +{static} toJson(GeographicEntity) : ObjectNode
+        }
+
+        class GeometryJsonCodec <<utility>> {
+            +{static} fromJson(JsonNode) : Geometry
+            +{static} toJson(Geometry) : ObjectNode
+        }
+    }
+
+    package "infrastructure.security" {
+        class Sha256PasswordHasher {
+            +hash(String) : String
+        }
+    }
+
+    package "infrastructure.web" {
+        class AuthController {
+            +login(LoginRequest) : ResponseEntity~ObjectNode~
+        }
+
+        class EntityController {
+            +list() : ObjectNode
+            +get(String) : ObjectNode
+            +create(JsonNode, HttpServletRequest) : ResponseEntity~ObjectNode~
+            +update(String, JsonNode, HttpServletRequest) : ObjectNode
+            +delete(String, HttpServletRequest) : ResponseEntity~Void~
+            +query(...) : ObjectNode
+        }
+
+        class CategoryController {
+            +list() : ObjectNode
+        }
+
+        class BaseMapController {
+            +basemap() : ResponseEntity~JsonNode~
+        }
+
+        class AuthInterceptor {
+            +preHandle(HttpServletRequest, HttpServletResponse, Object) : boolean
+        }
+
+        class WebConfig {
+            +addInterceptors(InterceptorRegistry) : void
+        }
+
+        class EntityRequestMapper <<utility>> {
+            +{static} toDomain(JsonNode, String, CategoryRepository) : GeographicEntity
+        }
+
+        class GlobalExceptionHandler <<@RestControllerAdvice>> {
+            +badRequest(RuntimeException) : ResponseEntity~ObjectNode~
+            +unauthorized(RuntimeException) : ResponseEntity~ObjectNode~
+            +forbidden(RuntimeException) : ResponseEntity~ObjectNode~
+            +notFound(RuntimeException) : ResponseEntity~ObjectNode~
+            +unreadable(HttpMessageNotReadableException) : ResponseEntity~ObjectNode~
+            +noResource(NoResourceFoundException) : ResponseEntity~ObjectNode~
+            +internal(Exception) : ResponseEntity~ObjectNode~
+        }
+    }
+
+    class SigApplication <<@SpringBootApplication>>
+}
+
+' ===== Relaciones de dominio =====
+Geometry <|-- Point
+Geometry <|-- LineString
+Geometry <|-- Polygon
+
+Point "1" *-- "1" Coordinate : composición
+LineString "1" *-- "*" Coordinate : composición
+Polygon "1" *-- "*" Coordinate : composición
+
+Point ..> GeoMath : usa
+LineString ..> GeoMath : usa
+Polygon ..> GeoMath : usa
+
+GeographicEntity "1" *-- "1" Geometry : composición
+GeographicEntity --> Category : referencia (agregación)
+GeographicEntity --> EntityNature : valor
+User --> Role : valor
+
+Point ..> InvalidGeometryException : lanza
+LineString ..> InvalidGeometryException : lanza
+Polygon ..> InvalidGeometryException : lanza
+Coordinate ..> InvalidGeometryException : lanza
+GeographicEntity ..> InvalidEntityException : lanza
+Category ..> InvalidEntityException : lanza
+User ..> InvalidEntityException : lanza
+
+' ===== Relaciones de aplicación =====
+EntityService --> EntityRepository : depende (interfaz)
+EntityService ..> EntityNotFoundException : lanza
+EntityService ..> UnauthorizedOperationException : lanza
+QueryService --> EntityRepository : depende (interfaz)
+QueryService ..> QueryResult : devuelve
+QueryService ..> InvalidEntityException : lanza
+CategoryService --> CategoryRepository : depende (interfaz)
+AuthService --> UserRepository : depende (interfaz)
+AuthService --> TokenManager : depende
+AuthService ..> PasswordHasher : depende (interfaz)
+AuthService ..> InvalidCredentialsException : lanza
+AuthService ..> AuthenticationRequiredException : lanza
+
+' ===== Relaciones de infraestructura =====
+EntityRepositoryJson ..|> EntityRepository : implementa
+CategoryRepositoryJson ..|> CategoryRepository : implementa
+UserRepositoryJson ..|> UserRepository : implementa
+
+EntityRepositoryJson ..> JsonDataStore : usa
+CategoryRepositoryJson ..> JsonDataStore : usa
+UserRepositoryJson ..> JsonDataStore : usa
+EntityRepositoryJson ..> CategoryRepository : resuelve categoría
+EntityRepositoryJson ..> EntityJsonCodec : usa
+JsonDataStore ..> PersistenceException : lanza
+
+EntityJsonCodec ..> GeometryJsonCodec : usa
+EntityJsonCodec ..> InvalidEntityException : lanza
+GeometryJsonCodec ..> InvalidGeometryException : lanza
+
+SeedDataInitializer ..> JsonDataStore : usa
+SeedDataInitializer ..> ResourceLoader : lee seed del classpath
+
+PasswordHasher <|.. Sha256PasswordHasher : implementa
+Sha256PasswordHasher ..> MessageDigest : usa
+
+' ===== Capa web =====
+AuthController --> AuthService
+EntityController --> EntityService
+EntityController --> QueryService
+EntityController --> CategoryRepository
+EntityController ..> EntityRequestMapper : parsea solicitudes
+EntityController ..> EntityJsonCodec : serializa respuestas
+EntityController ..> EntityNotFoundException : lanza
+CategoryController --> CategoryService
+BaseMapController ..> ResourceLoader : lee mapa base
+BaseMapController ..> ObjectMapper : parsea GeoJSON
+
+AuthInterceptor ..|> HandlerInterceptor : implementa
+AuthInterceptor --> AuthService : autentica + autoriza
+AuthInterceptor ..> AuthenticationRequiredException : lanza
+AuthInterceptor ..> UnauthorizedOperationException : lanza
+
+WebConfig ..|> WebMvcConfigurer : implementa
+WebConfig --> AuthInterceptor : registra
+
+GlobalExceptionHandler ..> InvalidEntityException : maneja
+GlobalExceptionHandler ..> InvalidGeometryException : maneja
+GlobalExceptionHandler ..> InvalidCredentialsException : maneja
+GlobalExceptionHandler ..> AuthenticationRequiredException : maneja
+GlobalExceptionHandler ..> UnauthorizedOperationException : maneja
+GlobalExceptionHandler ..> EntityNotFoundException : maneja
+GlobalExceptionHandler ..> HttpMessageNotReadableException : maneja
+GlobalExceptionHandler ..> NoResourceFoundException : maneja
+GlobalExceptionHandler ..> PersistenceException : maneja
+
+SigApplication ..> SpringApplication : arranca la aplicación
+
+@enduml
