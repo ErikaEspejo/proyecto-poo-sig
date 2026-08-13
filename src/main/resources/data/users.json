@@ -1,0 +1,12 @@
+[
+  {
+    "username": "admin",
+    "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "ADMINISTRATOR"
+  },
+  {
+    "username": "consulta",
+    "passwordHash": "7fa95c704c2defa7b1295d28bcddfd752bf9b594db18886dd64721183cfc47a5",
+    "role": "CONSULTATION"
+  }
+]

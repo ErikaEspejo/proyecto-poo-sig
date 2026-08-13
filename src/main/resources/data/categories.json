@@ -1,0 +1,8 @@
+[
+  { "id": "TURISMO", "name": "Turismo" },
+  { "id": "VIA", "name": "Vía" },
+  { "id": "BARRIO", "name": "Barrio" },
+  { "id": "INSTITUCION", "name": "Institución" },
+  { "id": "COMERCIO", "name": "Comercio" },
+  { "id": "ZONA", "name": "Zona" }
+]

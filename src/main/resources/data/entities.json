@@ -1,0 +1,5254 @@
+[
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f01",
+    "name": "Torre Colpatria",
+    "description": "Punto de referencia en el centro de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "altura": "196 m",
+      "año": "1978"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.071,
+        4.612
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f02",
+    "name": "Cerro de Monserrate",
+    "description": "Mirador turístico al oriente de la ciudad",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "altura": "3152 m"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.055,
+        4.605
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f03",
+    "name": "Avenida El Dorado",
+    "description": "Eje vial que conecta el occidente con el aeropuerto",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "avenida",
+      "longitud_km": "25"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.15,
+          4.68
+        ],
+        [
+          -74.12,
+          4.66
+        ],
+        [
+          -74.09,
+          4.65
+        ],
+        [
+          -74.06,
+          4.65
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f04",
+    "name": "Barrio La Candelaria",
+    "description": "Sector histórico y cultural del centro",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "La Candelaria"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.078,
+            4.595
+          ],
+          [
+            -74.07,
+            4.595
+          ],
+          [
+            -74.07,
+            4.601
+          ],
+          [
+            -74.078,
+            4.601
+          ],
+          [
+            -74.078,
+            4.595
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f05",
+    "name": "Universidad Distrital - Sede Aduanilla",
+    "description": "Campus universitario de la UD",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "universidad pública"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.093,
+        4.611
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f06",
+    "name": "Centro Comercial Gran Estación",
+    "description": "Centro comercial cercano a la estación de la calle 26",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.105,
+        4.654
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f07",
+    "name": "Corredor de la Carrera Séptima",
+    "description": "Zona de interés comercial y peatonal",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "comercial y cultural"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.071,
+          4.608
+        ],
+        [
+          -74.07,
+          4.615
+        ],
+        [
+          -74.069,
+          4.623
+        ],
+        [
+          -74.068,
+          4.63
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f08",
+    "name": "Parque Simón Bolívar",
+    "description": "El parque urbano más grande de la ciudad",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "área": "113 ha"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.086,
+        4.662
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f09",
+    "name": "Museo del Oro",
+    "description": "Museo con la mayor colección de orfebrería precolombina",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "horario": "09:00 - 18:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.072,
+        4.602
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f10",
+    "name": "Plaza de Bolívar",
+    "description": "Plaza principal de la ciudad, rodeada de edificios históricos",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "altura": "2640 m"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.075,
+        4.598
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f11",
+    "name": "Jardín Botánico José Celestino Mutis",
+    "description": "Centro de investigación y conservación de flora",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "área": "19.5 ha"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.099,
+        4.668
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f12",
+    "name": "Avenida Caracas",
+    "description": "Importante eje vial y de transporte del norte al sur",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "avenida",
+      "longitud_km": "20"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.082,
+          4.61
+        ],
+        [
+          -74.082,
+          4.63
+        ],
+        [
+          -74.081,
+          4.65
+        ],
+        [
+          -74.08,
+          4.67
+        ],
+        [
+          -74.078,
+          4.695
+        ],
+        [
+          -74.077,
+          4.71
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f13",
+    "name": "Autopista Norte",
+    "description": "Corredor vial que conecta el centro con el norte de la sabana",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "autopista",
+      "longitud_km": "35"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.063,
+          4.655
+        ],
+        [
+          -74.062,
+          4.68
+        ],
+        [
+          -74.06,
+          4.71
+        ],
+        [
+          -74.059,
+          4.74
+        ],
+        [
+          -74.058,
+          4.77
+        ],
+        [
+          -74.057,
+          4.8
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f14",
+    "name": "Avenida Boyacá",
+    "description": "Uno de los ejes viales perimetrales de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "avenida",
+      "longitud_km": "30"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13,
+          4.63
+        ],
+        [
+          -74.13,
+          4.655
+        ],
+        [
+          -74.131,
+          4.68
+        ],
+        [
+          -74.131,
+          4.705
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f15",
+    "name": "Avenida Circunvalar",
+    "description": "Vía panorámica que bordea los cerros orientales",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "avenida"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.061,
+          4.592
+        ],
+        [
+          -74.06,
+          4.606
+        ],
+        [
+          -74.058,
+          4.62
+        ],
+        [
+          -74.057,
+          4.634
+        ],
+        [
+          -74.056,
+          4.648
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f16",
+    "name": "Barrio Chapinero",
+    "description": "Sector comercial, universitario y gastronómico",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Chapinero"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.063,
+            4.636
+          ],
+          [
+            -74.052,
+            4.636
+          ],
+          [
+            -74.052,
+            4.662
+          ],
+          [
+            -74.063,
+            4.662
+          ],
+          [
+            -74.063,
+            4.636
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f17",
+    "name": "Barrio Teusaquillo",
+    "description": "Barrio residencial con arquitectura tradicional",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Teusaquillo"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.092,
+            4.632
+          ],
+          [
+            -74.08,
+            4.632
+          ],
+          [
+            -74.08,
+            4.654
+          ],
+          [
+            -74.092,
+            4.654
+          ],
+          [
+            -74.092,
+            4.632
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f18",
+    "name": "Barrio Usaquén",
+    "description": "Barrio histórico con plaza colonial y mercado de pulgas",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Usaquén"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.036,
+            4.7
+          ],
+          [
+            -74.027,
+            4.7
+          ],
+          [
+            -74.027,
+            4.716
+          ],
+          [
+            -74.036,
+            4.716
+          ],
+          [
+            -74.036,
+            4.7
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f19",
+    "name": "Universidad Nacional de Colombia",
+    "description": "Principal universidad pública del país",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "universidad pública",
+      "área": "120 ha"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.085,
+        4.638
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f20",
+    "name": "Biblioteca Virgilio Barco",
+    "description": "Biblioteca pública con diseño arquitectónico destacado",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "horario": "08:00 - 20:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.088,
+        4.659
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f21",
+    "name": "Museo Nacional de Colombia",
+    "description": "El museo más antiguo del país",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "horario": "09:00 - 17:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07,
+        4.615
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f22",
+    "name": "Centro Comercial Santafé",
+    "description": "Gran centro comercial en el noroccidente",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 22:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.095,
+        4.677
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f23",
+    "name": "Centro Comercial Unicentro",
+    "description": "Uno de los primeros centros comerciales de la ciudad",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.043,
+        4.669
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f24",
+    "name": "Plaza de las Américas",
+    "description": "Centro comercial al occidente de la ciudad",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.135,
+        4.655
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f25",
+    "name": "Zona T",
+    "description": "Sector de restaurantes y vida nocturna",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "gastronómico"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.05,
+            4.664
+          ],
+          [
+            -74.045,
+            4.664
+          ],
+          [
+            -74.045,
+            4.67
+          ],
+          [
+            -74.05,
+            4.67
+          ],
+          [
+            -74.05,
+            4.664
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f26",
+    "name": "Estadio El Campín",
+    "description": "El estadio de fútbol más importante de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "capacidad": "39000 personas"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.079,
+            4.646
+          ],
+          [
+            -74.073,
+            4.646
+          ],
+          [
+            -74.073,
+            4.654
+          ],
+          [
+            -74.079,
+            4.654
+          ],
+          [
+            -74.079,
+            4.646
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b3f8e2a-1c9d-4f5e-8b0a-2d6c3a9e5f27",
+    "name": "Parque El Virrey",
+    "description": "Corredor verde y de recreación en el norte",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "recreativo"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.056,
+            4.68
+          ],
+          [
+            -74.047,
+            4.68
+          ],
+          [
+            -74.047,
+            4.687
+          ],
+          [
+            -74.056,
+            4.687
+          ],
+          [
+            -74.056,
+            4.68
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "dab0d999-d1a6-4bf2-a10a-8bbeb1ea3124",
+    "name": "Parque Nacional Enrique Olaya Herrera",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0744,
+        4.5851
+      ]
+    }
+  },
+  {
+    "id": "961f6190-0ac1-44bf-baa9-d9597477cf2a",
+    "name": "Parque de los Periodistas",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06388,
+        4.62067
+      ]
+    }
+  },
+  {
+    "id": "6e6c2549-e592-409f-be99-11cf70b0155d",
+    "name": "Parque Santander",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06826,
+        4.62177
+      ]
+    }
+  },
+  {
+    "id": "6a0618e7-ef33-4082-919f-ea579c17d447",
+    "name": "Parque El Chicó",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08755,
+        4.69315
+      ]
+    }
+  },
+  {
+    "id": "12fdac7f-3c54-43c1-b68a-3e9c74fe045b",
+    "name": "Parque El Country",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05532,
+        4.70067
+      ]
+    }
+  },
+  {
+    "id": "20eaa9be-c640-42c8-b82b-1958c5925a9d",
+    "name": "Parque La Florida",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08278,
+        4.71156
+      ]
+    }
+  },
+  {
+    "id": "761d1da6-1976-4f18-bb07-826fdd451461",
+    "name": "Parque Mundo Aventura",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0626,
+        4.60017
+      ]
+    }
+  },
+  {
+    "id": "32c973b9-8914-4f1e-956f-a8290d420449",
+    "name": "Parque de la 93",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0823,
+        4.58983
+      ]
+    }
+  },
+  {
+    "id": "9da36d09-0e9a-44e1-8367-13c8e0241810",
+    "name": "Parque El Tunal",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07511,
+        4.58929
+      ]
+    }
+  },
+  {
+    "id": "d875ae03-ba98-4709-86bd-fc56dc425b17",
+    "name": "Parque Timiza",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08009,
+        4.59074
+      ]
+    }
+  },
+  {
+    "id": "9fcf806f-21da-48e4-b377-cd9eae53f63a",
+    "name": "Parque Cayetano Cañizares",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05437,
+        4.6101
+      ]
+    }
+  },
+  {
+    "id": "bcfc869c-16f3-40d8-964f-60d9ebba44d2",
+    "name": "Parque de la Independencia",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08346,
+        4.60523
+      ]
+    }
+  },
+  {
+    "id": "6dd9849d-fb08-42f5-8d1d-b790748e6de3",
+    "name": "Parque Milenio",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08242,
+        4.63255
+      ]
+    }
+  },
+  {
+    "id": "5c30bb8c-a2fb-4510-8eaf-481492129a3b",
+    "name": "Parque Bavaria",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06722,
+        4.70015
+      ]
+    }
+  },
+  {
+    "id": "6cd742e6-ba5c-483a-8c2d-a35362338dc7",
+    "name": "Parque Lourdes",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08059,
+        4.69007
+      ]
+    }
+  },
+  {
+    "id": "f777cdeb-7a0a-4ad7-b981-77068a0879db",
+    "name": "Parque Sauzalito",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0476,
+        4.66836
+      ]
+    }
+  },
+  {
+    "id": "2e79a960-433e-46fd-9933-c7e461e301db",
+    "name": "Parque Centenario",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.15009,
+        4.68826
+      ]
+    }
+  },
+  {
+    "id": "8d910922-8a27-4e7a-b296-23ad29bd421e",
+    "name": "Parque de los Novios",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07299,
+        4.58613
+      ]
+    }
+  },
+  {
+    "id": "959e75a0-7394-4b83-a2ac-0aa52f293eeb",
+    "name": "Parque La Colina",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.12615,
+        4.615
+      ]
+    }
+  },
+  {
+    "id": "49b10ee6-53c4-4020-bdff-297307a9576e",
+    "name": "Parque San Cristóbal",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08561,
+        4.69199
+      ]
+    }
+  },
+  {
+    "id": "1c5b64fc-85b1-4e51-9d63-a50b79024945",
+    "name": "Plaza de Usaquén",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08549,
+        4.68489
+      ]
+    }
+  },
+  {
+    "id": "1c245607-cfaa-4221-b53e-78bda08462e2",
+    "name": "Plaza Santander",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0737,
+        4.60158
+      ]
+    }
+  },
+  {
+    "id": "5af0bb12-35f1-4686-aa86-604110633cf6",
+    "name": "Plaza España",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06903,
+        4.65172
+      ]
+    }
+  },
+  {
+    "id": "e4fbe571-6aae-4dc8-81b9-ef558fc2a04a",
+    "name": "Plaza de la Mariposa",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0428,
+        4.68712
+      ]
+    }
+  },
+  {
+    "id": "432a7c98-f1e6-4aa4-bcc8-fbcd243035f5",
+    "name": "Museo Botero",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08435,
+        4.67118
+      ]
+    }
+  },
+  {
+    "id": "d493e44d-ec23-4182-b89f-51230c8ee32e",
+    "name": "Museo de Arte Moderno de Bogotá",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06694,
+        4.63252
+      ]
+    }
+  },
+  {
+    "id": "1f8977e9-8c0d-483e-a990-3933cf8b487c",
+    "name": "Planetario de Bogotá",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.12383,
+        4.60547
+      ]
+    }
+  },
+  {
+    "id": "90d59e13-33c0-4868-a294-66c8ebc5eba5",
+    "name": "Casa de Nariño",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05139,
+        4.62774
+      ]
+    }
+  },
+  {
+    "id": "8255f4e8-a23b-4c2a-89d8-7f439f35f7dc",
+    "name": "Catedral Primada de Colombia",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.1606,
+        4.60671
+      ]
+    }
+  },
+  {
+    "id": "8e957eef-9f38-42ca-8ac9-5f146f14bf0f",
+    "name": "Quinta de Bolívar",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07918,
+        4.72963
+      ]
+    }
+  },
+  {
+    "id": "f96e869c-0ac3-4fac-b6a6-e85090f0ed65",
+    "name": "Palacio Liévano",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06865,
+        4.69245
+      ]
+    }
+  },
+  {
+    "id": "ead675a5-9ceb-436f-84e4-4b9c35bc453d",
+    "name": "Cerro de Guadalupe",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05721,
+        4.66414
+      ]
+    }
+  },
+  {
+    "id": "1df9c7c4-e942-490f-b08a-549a842edf57",
+    "name": "Coliseo MedPlus",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07762,
+        4.67815
+      ]
+    }
+  },
+  {
+    "id": "e7539ca0-a933-4de2-aec7-836587364edc",
+    "name": "Teatro Colón",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0696,
+        4.63325
+      ]
+    }
+  },
+  {
+    "id": "f8095961-fe6d-415a-99ce-6b6a68353d6a",
+    "name": "Teatro Jorge Eliécer Gaitán",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05439,
+        4.59541
+      ]
+    }
+  },
+  {
+    "id": "27582816-ab5d-4182-8a2c-03c99d0098f2",
+    "name": "Mirador de la Calera",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05018,
+        4.68992
+      ]
+    }
+  },
+  {
+    "id": "8e304aed-45bc-454b-b6be-0cfb2e3e5626",
+    "name": "Humedal Córdoba",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.12276,
+        4.64456
+      ]
+    }
+  },
+  {
+    "id": "5273da9e-4744-4921-83d5-20e1e27cc647",
+    "name": "Observatorio Astronómico Nacional",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.04088,
+        4.68589
+      ]
+    }
+  },
+  {
+    "id": "087560c6-bc63-42ab-9b37-b7dcf668b637",
+    "name": "Biblioteca Luis Ángel Arango",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07722,
+        4.73136
+      ]
+    }
+  },
+  {
+    "id": "60b0ded7-b3e9-46b4-a317-6e18f1730ac4",
+    "name": "Iglesia de San Francisco",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.11454,
+        4.65773
+      ]
+    }
+  },
+  {
+    "id": "de6b17ac-08d2-408d-be00-9ac76a46ebb5",
+    "name": "Museo de la Policía",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08147,
+        4.59437
+      ]
+    }
+  },
+  {
+    "id": "ba99aa45-2707-4ec8-b1a9-e58adf77a7dc",
+    "name": "Museo de los Niños",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.10883,
+        4.66442
+      ]
+    }
+  },
+  {
+    "id": "e211a053-aea2-4bff-aece-72c97024424d",
+    "name": "Museo del Chicó",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05675,
+        4.60449
+      ]
+    }
+  },
+  {
+    "id": "bb3b943c-08d3-4b60-bb71-cb34969dd055",
+    "name": "Parque de la 103",
+    "description": "Lugar de interés turístico de Bogotá",
+    "nature": "POINT_OF_INTEREST",
+    "category": "TURISMO",
+    "attributes": {
+      "tipo": "turístico"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.04863,
+        4.68912
+      ]
+    }
+  },
+  {
+    "id": "e35df1b7-e2c7-436c-859b-3c4af748a848",
+    "name": "Avenida 68",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.15307,
+          4.65345
+        ],
+        [
+          -74.1351,
+          4.64899
+        ],
+        [
+          -74.11713,
+          4.6483
+        ],
+        [
+          -74.09915,
+          4.64992
+        ],
+        [
+          -74.08118,
+          4.64644
+        ],
+        [
+          -74.06321,
+          4.65319
+        ]
+      ]
+    }
+  },
+  {
+    "id": "5cf3a1ef-adf0-4d0a-8635-f0ba965ac24a",
+    "name": "Avenida 30",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13177,
+          4.56086
+        ],
+        [
+          -74.12786,
+          4.60076
+        ],
+        [
+          -74.13059,
+          4.64065
+        ],
+        [
+          -74.12818,
+          4.68054
+        ],
+        [
+          -74.12862,
+          4.72043
+        ]
+      ]
+    }
+  },
+  {
+    "id": "85abb26e-748d-46f1-b142-9f61ae81b4c0",
+    "name": "Avenida Suba",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13958,
+          4.58032
+        ],
+        [
+          -74.11604,
+          4.58104
+        ],
+        [
+          -74.0925,
+          4.58755
+        ],
+        [
+          -74.06896,
+          4.58461
+        ],
+        [
+          -74.04543,
+          4.58049
+        ],
+        [
+          -74.02189,
+          4.58121
+        ]
+      ]
+    }
+  },
+  {
+    "id": "9bacbaa3-0ce8-42e5-8d80-568b253b90c9",
+    "name": "Avenida Ciudad de Cali",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13177,
+          4.58775
+        ],
+        [
+          -74.11215,
+          4.58957
+        ],
+        [
+          -74.09253,
+          4.58864
+        ],
+        [
+          -74.07292,
+          4.58715
+        ]
+      ]
+    }
+  },
+  {
+    "id": "9afe9736-9efb-4f0d-9d69-9b6b693db810",
+    "name": "Avenida de las Américas",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.0526,
+          4.59983
+        ],
+        [
+          -74.05547,
+          4.67157
+        ],
+        [
+          -74.05271,
+          4.74332
+        ]
+      ]
+    }
+  },
+  {
+    "id": "9be26a2e-c400-4b37-b868-facbce91c306",
+    "name": "Avenida Primero de Mayo",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.1468,
+          4.74066
+        ],
+        [
+          -74.13166,
+          4.73487
+        ],
+        [
+          -74.11653,
+          4.73884
+        ],
+        [
+          -74.10139,
+          4.73526
+        ],
+        [
+          -74.08626,
+          4.73702
+        ],
+        [
+          -74.07112,
+          4.73953
+        ]
+      ]
+    }
+  },
+  {
+    "id": "ade66c4f-5df9-4267-b967-a6332b4b907e",
+    "name": "Avenida NQS",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.15454,
+          4.72636
+        ],
+        [
+          -74.13567,
+          4.7279
+        ],
+        [
+          -74.11679,
+          4.72229
+        ],
+        [
+          -74.09792,
+          4.72183
+        ],
+        [
+          -74.07904,
+          4.72417
+        ],
+        [
+          -74.06017,
+          4.72731
+        ]
+      ]
+    }
+  },
+  {
+    "id": "6e4f7ed4-ff53-428d-a305-5d2aa016983a",
+    "name": "Avenida 13",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.15802,
+          4.58343
+        ],
+        [
+          -74.11656,
+          4.58163
+        ],
+        [
+          -74.0751,
+          4.58427
+        ],
+        [
+          -74.03364,
+          4.58093
+        ]
+      ]
+    }
+  },
+  {
+    "id": "3d2751ab-d453-4a95-8911-903ed37f021c",
+    "name": "Avenida 19",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.06037,
+          4.55175
+        ],
+        [
+          -74.06617,
+          4.58814
+        ],
+        [
+          -74.06603,
+          4.62453
+        ],
+        [
+          -74.06188,
+          4.66092
+        ],
+        [
+          -74.0612,
+          4.69731
+        ],
+        [
+          -74.06491,
+          4.73369
+        ]
+      ]
+    }
+  },
+  {
+    "id": "2365bf4c-c44f-4190-b87f-07f09a294ba0",
+    "name": "Autopista Sur",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.12626,
+          4.58505
+        ],
+        [
+          -74.12645,
+          4.66461
+        ],
+        [
+          -74.12938,
+          4.74417
+        ]
+      ]
+    }
+  },
+  {
+    "id": "6b303797-2a11-49c9-887f-61903a0027cb",
+    "name": "Avenida 26",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.11269,
+          4.5719
+        ],
+        [
+          -74.11143,
+          4.66184
+        ],
+        [
+          -74.11258,
+          4.75178
+        ]
+      ]
+    }
+  },
+  {
+    "id": "15b87fff-7991-4c7c-92de-f58046d9457c",
+    "name": "Calle 13",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.12463,
+          4.58771
+        ],
+        [
+          -74.12569,
+          4.62255
+        ],
+        [
+          -74.1261,
+          4.6574
+        ],
+        [
+          -74.1275,
+          4.69224
+        ],
+        [
+          -74.13132,
+          4.72709
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e129e5df-2483-414f-a438-ff295f9a5578",
+    "name": "Calle 63",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.139,
+          4.61379
+        ],
+        [
+          -74.10634,
+          4.61627
+        ],
+        [
+          -74.07369,
+          4.61453
+        ]
+      ]
+    }
+  },
+  {
+    "id": "17ea68aa-3f6b-47bf-acd8-7904495394c0",
+    "name": "Calle 80",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.10325,
+          4.584
+        ],
+        [
+          -74.10259,
+          4.63808
+        ],
+        [
+          -74.10033,
+          4.69216
+        ],
+        [
+          -74.09684,
+          4.74624
+        ]
+      ]
+    }
+  },
+  {
+    "id": "caca9a62-3742-47ee-9032-8b7bd2f02862",
+    "name": "Calle 100",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.03939,
+          4.58244
+        ],
+        [
+          -74.03986,
+          4.61501
+        ],
+        [
+          -74.04068,
+          4.64758
+        ],
+        [
+          -74.04593,
+          4.68016
+        ],
+        [
+          -74.04056,
+          4.71273
+        ],
+        [
+          -74.04484,
+          4.7453
+        ]
+      ]
+    }
+  },
+  {
+    "id": "7b0d5612-424f-4410-bc71-666d782171ca",
+    "name": "Calle 72",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.12173,
+          4.65839
+        ],
+        [
+          -74.0834,
+          4.65441
+        ],
+        [
+          -74.04506,
+          4.66111
+        ]
+      ]
+    }
+  },
+  {
+    "id": "14a0f5df-7522-4a7a-a2e3-5a6d5a63ba7a",
+    "name": "Calle 53",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13663,
+          4.65367
+        ],
+        [
+          -74.10326,
+          4.64978
+        ],
+        [
+          -74.06989,
+          4.65561
+        ],
+        [
+          -74.03653,
+          4.65088
+        ]
+      ]
+    }
+  },
+  {
+    "id": "5f5d65f4-a7dd-4f0f-bc67-cf09bd4367fc",
+    "name": "Calle 45",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.12048,
+          4.75117
+        ],
+        [
+          -74.07214,
+          4.75245
+        ],
+        [
+          -74.02379,
+          4.75124
+        ]
+      ]
+    }
+  },
+  {
+    "id": "419b17b7-423f-4424-8ba3-aa93848121e6",
+    "name": "Calle 34",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.14056,
+          4.69523
+        ],
+        [
+          -74.12815,
+          4.6981
+        ],
+        [
+          -74.11574,
+          4.69765
+        ],
+        [
+          -74.10333,
+          4.6964
+        ],
+        [
+          -74.09093,
+          4.69992
+        ],
+        [
+          -74.07852,
+          4.69502
+        ]
+      ]
+    }
+  },
+  {
+    "id": "bb0cc0ff-f766-43bd-883f-cdbd17c81952",
+    "name": "Calle 24",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.14205,
+          4.61162
+        ],
+        [
+          -74.12074,
+          4.60881
+        ],
+        [
+          -74.09942,
+          4.60612
+        ],
+        [
+          -74.0781,
+          4.61062
+        ],
+        [
+          -74.05678,
+          4.60725
+        ],
+        [
+          -74.03547,
+          4.61268
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e9bee703-881a-475f-9e37-06d38f030225",
+    "name": "Calle 19",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.16028,
+          4.55764
+        ],
+        [
+          -74.14069,
+          4.56434
+        ],
+        [
+          -74.1211,
+          4.56253
+        ],
+        [
+          -74.10151,
+          4.56342
+        ],
+        [
+          -74.08193,
+          4.56366
+        ],
+        [
+          -74.06234,
+          4.55749
+        ]
+      ]
+    }
+  },
+  {
+    "id": "81f0d9bf-0fd9-4795-98a9-82950c6b9116",
+    "name": "Carrera 7",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.07736,
+          4.56028
+        ],
+        [
+          -74.07531,
+          4.65528
+        ],
+        [
+          -74.07604,
+          4.75028
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d567f923-c278-4253-8479-e5f07796ac57",
+    "name": "Carrera 10",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13003,
+          4.70054
+        ],
+        [
+          -74.10092,
+          4.69832
+        ],
+        [
+          -74.07182,
+          4.69822
+        ],
+        [
+          -74.04271,
+          4.70075
+        ]
+      ]
+    }
+  },
+  {
+    "id": "16258ffc-4dc7-4425-b894-8e7abdb803f9",
+    "name": "Carrera 15",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13236,
+          4.59688
+        ],
+        [
+          -74.11717,
+          4.59741
+        ],
+        [
+          -74.10198,
+          4.5993
+        ],
+        [
+          -74.08679,
+          4.59919
+        ],
+        [
+          -74.0716,
+          4.60152
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e28521cb-c532-40e3-aa1d-920fc6507990",
+    "name": "Carrera 17",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.0868,
+          4.59179
+        ],
+        [
+          -74.08721,
+          4.65368
+        ],
+        [
+          -74.08504,
+          4.71556
+        ]
+      ]
+    }
+  },
+  {
+    "id": "a4c76e19-767e-46d9-add9-748305c557bc",
+    "name": "Carrera 27",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.08167,
+          4.55002
+        ],
+        [
+          -74.08527,
+          4.64676
+        ],
+        [
+          -74.08595,
+          4.74349
+        ]
+      ]
+    }
+  },
+  {
+    "id": "98c72d80-f3b1-4cae-b5d3-5eeabc507b5a",
+    "name": "Carrera 30",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.08387,
+          4.5578
+        ],
+        [
+          -74.08106,
+          4.6482
+        ],
+        [
+          -74.08312,
+          4.73859
+        ]
+      ]
+    }
+  },
+  {
+    "id": "96fdc09b-024e-40be-a0b1-bcd0ff511256",
+    "name": "Carrera 50",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.16604,
+          4.69795
+        ],
+        [
+          -74.13899,
+          4.69419
+        ],
+        [
+          -74.11193,
+          4.69636
+        ],
+        [
+          -74.08487,
+          4.6927
+        ],
+        [
+          -74.05782,
+          4.69752
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e65c6be8-d53f-427e-bad3-d71924326311",
+    "name": "Carrera 68",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.11184,
+          4.55218
+        ],
+        [
+          -74.11412,
+          4.59367
+        ],
+        [
+          -74.10841,
+          4.63516
+        ],
+        [
+          -74.11334,
+          4.67664
+        ],
+        [
+          -74.11319,
+          4.71813
+        ]
+      ]
+    }
+  },
+  {
+    "id": "6daccff2-7d88-4368-a05e-fa4a66021411",
+    "name": "Avenida Villavicencio",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13279,
+          4.57339
+        ],
+        [
+          -74.12869,
+          4.63848
+        ],
+        [
+          -74.13217,
+          4.70357
+        ]
+      ]
+    }
+  },
+  {
+    "id": "5c5d3274-6309-43a4-8834-f7fd44740388",
+    "name": "Avenida Cali",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.12465,
+          4.5771
+        ],
+        [
+          -74.12386,
+          4.62428
+        ],
+        [
+          -74.11981,
+          4.67145
+        ],
+        [
+          -74.12424,
+          4.71862
+        ]
+      ]
+    }
+  },
+  {
+    "id": "1d44c609-d1ee-4c24-b962-3c05ccba7355",
+    "name": "Avenida Kennedy",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.16963,
+          4.67987
+        ],
+        [
+          -74.1463,
+          4.67939
+        ],
+        [
+          -74.12297,
+          4.68375
+        ],
+        [
+          -74.09964,
+          4.68422
+        ],
+        [
+          -74.07631,
+          4.68184
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b5a89312-75e2-4376-83d4-c64d45d9c0fb",
+    "name": "Calle 6",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.04623,
+          4.57209
+        ],
+        [
+          -74.04564,
+          4.60493
+        ],
+        [
+          -74.05049,
+          4.63776
+        ],
+        [
+          -74.05146,
+          4.67059
+        ],
+        [
+          -74.05195,
+          4.70343
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8eb0d753-8b49-4c1a-a1f4-2fd3fd15c3e2",
+    "name": "Calle 8",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.13589,
+          4.69656
+        ],
+        [
+          -74.12151,
+          4.68959
+        ],
+        [
+          -74.10713,
+          4.6947
+        ],
+        [
+          -74.09275,
+          4.69064
+        ],
+        [
+          -74.07836,
+          4.69488
+        ],
+        [
+          -74.06398,
+          4.69098
+        ]
+      ]
+    }
+  },
+  {
+    "id": "5f1a7035-d6ed-47ea-80b2-e7277831d4bc",
+    "name": "Calle 19 Sur",
+    "description": "Corredor vial de la ciudad",
+    "nature": "ROAD",
+    "category": "VIA",
+    "attributes": {
+      "tipo": "vía"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -74.07083,
+          4.55841
+        ],
+        [
+          -74.06458,
+          4.59725
+        ],
+        [
+          -74.06879,
+          4.63609
+        ],
+        [
+          -74.06942,
+          4.67493
+        ],
+        [
+          -74.06598,
+          4.71377
+        ],
+        [
+          -74.07196,
+          4.75262
+        ]
+      ]
+    }
+  },
+  {
+    "id": "60cbcbad-10b7-48c6-a977-a9771830b3bf",
+    "name": "Barrio La Macarena",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.06381,
+            4.69455
+          ],
+          [
+            -74.05018,
+            4.69455
+          ],
+          [
+            -74.05018,
+            4.7139
+          ],
+          [
+            -74.06381,
+            4.7139
+          ],
+          [
+            -74.06381,
+            4.69455
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "9a7276e7-d444-4041-9175-975e832e7999",
+    "name": "Barrio San Diego",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.07437,
+            4.73397
+          ],
+          [
+            -74.06118,
+            4.73397
+          ],
+          [
+            -74.06118,
+            4.74361
+          ],
+          [
+            -74.07437,
+            4.74361
+          ],
+          [
+            -74.07437,
+            4.73397
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "789d0a02-8f22-4bd2-8f61-253bf14af535",
+    "name": "Barrio Las Nieves",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.08597,
+            4.61229
+          ],
+          [
+            -74.07884,
+            4.61229
+          ],
+          [
+            -74.07884,
+            4.61892
+          ],
+          [
+            -74.08597,
+            4.61892
+          ],
+          [
+            -74.08597,
+            4.61229
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "6c27cd9a-4880-42c2-ac19-b0b9ccb3f49e",
+    "name": "Barrio La Favorita",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.04706,
+            4.69761
+          ],
+          [
+            -74.03383,
+            4.69761
+          ],
+          [
+            -74.03383,
+            4.71615
+          ],
+          [
+            -74.04706,
+            4.71615
+          ],
+          [
+            -74.04706,
+            4.69761
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8307af37-2fae-40a7-bc64-1b16fb20e07c",
+    "name": "Barrio Santa Bárbara",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.06645,
+            4.72838
+          ],
+          [
+            -74.0476,
+            4.72838
+          ],
+          [
+            -74.0476,
+            4.74697
+          ],
+          [
+            -74.06645,
+            4.74697
+          ],
+          [
+            -74.06645,
+            4.72838
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e3f9bc12-bcb6-4ce5-a8ad-c812cd7d200d",
+    "name": "Barrio El Chicó",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.11775,
+            4.66307
+          ],
+          [
+            -74.1014,
+            4.66307
+          ],
+          [
+            -74.1014,
+            4.67183
+          ],
+          [
+            -74.11775,
+            4.67183
+          ],
+          [
+            -74.11775,
+            4.66307
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "da464455-26bc-4a79-bb7d-6941d197858e",
+    "name": "Barrio El Refugio",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.09921,
+            4.60924
+          ],
+          [
+            -74.07575,
+            4.60924
+          ],
+          [
+            -74.07575,
+            4.62543
+          ],
+          [
+            -74.09921,
+            4.62543
+          ],
+          [
+            -74.09921,
+            4.60924
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8c79a732-29b3-4aed-98de-06e8a1581df2",
+    "name": "Barrio La Cabrera",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.11988,
+            4.69577
+          ],
+          [
+            -74.10672,
+            4.69577
+          ],
+          [
+            -74.10672,
+            4.70644
+          ],
+          [
+            -74.11988,
+            4.70644
+          ],
+          [
+            -74.11988,
+            4.69577
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "a9a0aa49-5d3e-4832-9d7e-63d636a7d8a9",
+    "name": "Barrio Bella Suiza",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.10498,
+            4.70826
+          ],
+          [
+            -74.09827,
+            4.70826
+          ],
+          [
+            -74.09827,
+            4.72248
+          ],
+          [
+            -74.10498,
+            4.72248
+          ],
+          [
+            -74.10498,
+            4.70826
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e71b7f17-566a-4f81-bb0a-60000fe5145c",
+    "name": "Barrio Santa Paula",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.095,
+            4.63878
+          ],
+          [
+            -74.08337,
+            4.63878
+          ],
+          [
+            -74.08337,
+            4.64481
+          ],
+          [
+            -74.095,
+            4.64481
+          ],
+          [
+            -74.095,
+            4.63878
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f8de0cc7-2a3c-4e98-bcd6-a5cff9396692",
+    "name": "Barrio El Cedro",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.1138,
+            4.67547
+          ],
+          [
+            -74.10072,
+            4.67547
+          ],
+          [
+            -74.10072,
+            4.68861
+          ],
+          [
+            -74.1138,
+            4.68861
+          ],
+          [
+            -74.1138,
+            4.67547
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "851446b9-f92c-4b6b-87d8-e31bdba8feb1",
+    "name": "Barrio San Patricio",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.16287,
+            4.72787
+          ],
+          [
+            -74.14731,
+            4.72787
+          ],
+          [
+            -74.14731,
+            4.7386
+          ],
+          [
+            -74.16287,
+            4.7386
+          ],
+          [
+            -74.16287,
+            4.72787
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "78b112db-7f93-4692-8b36-36841ad6b466",
+    "name": "Barrio Bosque Calderón",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.1553,
+            4.58161
+          ],
+          [
+            -74.14512,
+            4.58161
+          ],
+          [
+            -74.14512,
+            4.59731
+          ],
+          [
+            -74.1553,
+            4.59731
+          ],
+          [
+            -74.1553,
+            4.58161
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8bf6b340-27ca-4320-857f-c70651190916",
+    "name": "Barrio La Esperanza",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.09837,
+            4.67314
+          ],
+          [
+            -74.08063,
+            4.67314
+          ],
+          [
+            -74.08063,
+            4.69146
+          ],
+          [
+            -74.09837,
+            4.69146
+          ],
+          [
+            -74.09837,
+            4.67314
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "51c013b3-9032-49cd-a948-5ef0390eb8bb",
+    "name": "Barrio Rionegro",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.11166,
+            4.55261
+          ],
+          [
+            -74.09203,
+            4.55261
+          ],
+          [
+            -74.09203,
+            4.5691
+          ],
+          [
+            -74.11166,
+            4.5691
+          ],
+          [
+            -74.11166,
+            4.55261
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "93b4842c-e955-4c09-ab88-96df6e5417d6",
+    "name": "Barrio Castilla",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.04506,
+            4.71191
+          ],
+          [
+            -74.03732,
+            4.71191
+          ],
+          [
+            -74.03732,
+            4.72647
+          ],
+          [
+            -74.04506,
+            4.72647
+          ],
+          [
+            -74.04506,
+            4.71191
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "21d3b245-69ac-49f6-8fb3-82466145a0b6",
+    "name": "Barrio La Gaitana",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.06126,
+            4.69359
+          ],
+          [
+            -74.05056,
+            4.69359
+          ],
+          [
+            -74.05056,
+            4.69989
+          ],
+          [
+            -74.06126,
+            4.69989
+          ],
+          [
+            -74.06126,
+            4.69359
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e8bdb832-4247-41f4-8717-72220b89dcec",
+    "name": "Barrio El Rincón",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.16438,
+            4.67121
+          ],
+          [
+            -74.15211,
+            4.67121
+          ],
+          [
+            -74.15211,
+            4.67791
+          ],
+          [
+            -74.16438,
+            4.67791
+          ],
+          [
+            -74.16438,
+            4.67121
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f1f41412-66f8-41e1-8eca-0f72a5c084f7",
+    "name": "Barrio El Salitre",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.038,
+            4.71823
+          ],
+          [
+            -74.03151,
+            4.71823
+          ],
+          [
+            -74.03151,
+            4.73767
+          ],
+          [
+            -74.038,
+            4.73767
+          ],
+          [
+            -74.038,
+            4.71823
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fe39fe23-590b-4a03-8124-9128238ff276",
+    "name": "Barrio Normandía",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.04962,
+            4.6776
+          ],
+          [
+            -74.04339,
+            4.6776
+          ],
+          [
+            -74.04339,
+            4.68929
+          ],
+          [
+            -74.04962,
+            4.68929
+          ],
+          [
+            -74.04962,
+            4.6776
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "87fb2fc1-169a-46a2-b7b6-32817422f915",
+    "name": "Barrio Quinta Paredes",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.04836,
+            4.71858
+          ],
+          [
+            -74.04157,
+            4.71858
+          ],
+          [
+            -74.04157,
+            4.73247
+          ],
+          [
+            -74.04836,
+            4.73247
+          ],
+          [
+            -74.04836,
+            4.71858
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "c703eaa7-5cb8-4aba-9222-4b41eb0d42ed",
+    "name": "Barrio Palermo",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.14651,
+            4.65747
+          ],
+          [
+            -74.12819,
+            4.65747
+          ],
+          [
+            -74.12819,
+            4.67481
+          ],
+          [
+            -74.14651,
+            4.67481
+          ],
+          [
+            -74.14651,
+            4.65747
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "63ea427f-0e82-49dc-bfe2-f089642a4f2f",
+    "name": "Barrio Galerías",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.10007,
+            4.57834
+          ],
+          [
+            -74.08457,
+            4.57834
+          ],
+          [
+            -74.08457,
+            4.59662
+          ],
+          [
+            -74.10007,
+            4.59662
+          ],
+          [
+            -74.10007,
+            4.57834
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "32f3ab2a-3c0e-41e7-a202-ef2affb486da",
+    "name": "Barrio Eduardo Santos",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.16353,
+            4.66879
+          ],
+          [
+            -74.14617,
+            4.66879
+          ],
+          [
+            -74.14617,
+            4.68299
+          ],
+          [
+            -74.16353,
+            4.68299
+          ],
+          [
+            -74.16353,
+            4.66879
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "36fc7f36-3656-4646-b231-21943d479776",
+    "name": "Barrio La Esmeralda",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.16151,
+            4.57556
+          ],
+          [
+            -74.15077,
+            4.57556
+          ],
+          [
+            -74.15077,
+            4.58944
+          ],
+          [
+            -74.16151,
+            4.58944
+          ],
+          [
+            -74.16151,
+            4.57556
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "9e8f70f2-192d-4b24-b232-23fbad4aa599",
+    "name": "Barrio Marly",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.1479,
+            4.58627
+          ],
+          [
+            -74.13676,
+            4.58627
+          ],
+          [
+            -74.13676,
+            4.60069
+          ],
+          [
+            -74.1479,
+            4.60069
+          ],
+          [
+            -74.1479,
+            4.58627
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8651f21a-53b7-4d42-aa6b-71b78724ee7f",
+    "name": "Barrio La Soledad",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.1328,
+            4.66378
+          ],
+          [
+            -74.11327,
+            4.66378
+          ],
+          [
+            -74.11327,
+            4.67704
+          ],
+          [
+            -74.1328,
+            4.67704
+          ],
+          [
+            -74.1328,
+            4.66378
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f5bb99b6-74b8-4fee-af3b-39b5ed2c102b",
+    "name": "Barrio Los Alcázares",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.15626,
+            4.68094
+          ],
+          [
+            -74.14032,
+            4.68094
+          ],
+          [
+            -74.14032,
+            4.69648
+          ],
+          [
+            -74.15626,
+            4.69648
+          ],
+          [
+            -74.15626,
+            4.68094
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "90e7f381-a8eb-47d9-82ff-f57c8269f52e",
+    "name": "Barrio La Salle",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.0746,
+            4.6826
+          ],
+          [
+            -74.06544,
+            4.6826
+          ],
+          [
+            -74.06544,
+            4.69666
+          ],
+          [
+            -74.0746,
+            4.69666
+          ],
+          [
+            -74.0746,
+            4.6826
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "aed72ce1-0222-4e7e-a7ba-c21d8de9a7ce",
+    "name": "Barrio Las Américas",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.14302,
+            4.57525
+          ],
+          [
+            -74.12032,
+            4.57525
+          ],
+          [
+            -74.12032,
+            4.58221
+          ],
+          [
+            -74.14302,
+            4.58221
+          ],
+          [
+            -74.14302,
+            4.57525
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "3b54cf01-316c-4e94-a234-e05d3ca9e256",
+    "name": "Barrio Patio Bonito",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.12152,
+            4.64669
+          ],
+          [
+            -74.11241,
+            4.64669
+          ],
+          [
+            -74.11241,
+            4.65612
+          ],
+          [
+            -74.12152,
+            4.65612
+          ],
+          [
+            -74.12152,
+            4.64669
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "19abb25d-0441-46da-b1e9-3a184174773d",
+    "name": "Barrio El Tintal",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.09345,
+            4.56351
+          ],
+          [
+            -74.07965,
+            4.56351
+          ],
+          [
+            -74.07965,
+            4.58302
+          ],
+          [
+            -74.09345,
+            4.58302
+          ],
+          [
+            -74.09345,
+            4.56351
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "2fe3de7c-30a8-46e6-a933-9db6f2e93b12",
+    "name": "Barrio Villa María",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.1153,
+            4.56427
+          ],
+          [
+            -74.10164,
+            4.56427
+          ],
+          [
+            -74.10164,
+            4.57775
+          ],
+          [
+            -74.1153,
+            4.57775
+          ],
+          [
+            -74.1153,
+            4.56427
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "f62eb4fa-692d-4bf2-b582-3f2b67e579e6",
+    "name": "Barrio El Prado",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.13238,
+            4.65282
+          ],
+          [
+            -74.11998,
+            4.65282
+          ],
+          [
+            -74.11998,
+            4.66053
+          ],
+          [
+            -74.13238,
+            4.66053
+          ],
+          [
+            -74.13238,
+            4.65282
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "4cef01c6-3773-4755-aeab-380035044f72",
+    "name": "Barrio San José de Bavaria",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.03863,
+            4.58695
+          ],
+          [
+            -74.03156,
+            4.58695
+          ],
+          [
+            -74.03156,
+            4.60449
+          ],
+          [
+            -74.03863,
+            4.60449
+          ],
+          [
+            -74.03863,
+            4.58695
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "122f3ced-c698-4acf-9690-ac852beb3f92",
+    "name": "Barrio La Floresta",
+    "description": "Barrio residencial de Bogotá",
+    "nature": "NEIGHBORHOOD",
+    "category": "BARRIO",
+    "attributes": {
+      "localidad": "Bogotá"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.14664,
+            4.71042
+          ],
+          [
+            -74.12612,
+            4.71042
+          ],
+          [
+            -74.12612,
+            4.72349
+          ],
+          [
+            -74.14664,
+            4.72349
+          ],
+          [
+            -74.14664,
+            4.71042
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b466fa84-c178-457a-98c5-062c1a919394",
+    "name": "Universidad de los Andes",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08767,
+        4.65478
+      ]
+    }
+  },
+  {
+    "id": "ff94c09c-2ad5-4961-990b-f44d56f6c97b",
+    "name": "Pontificia Universidad Javeriana",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.10846,
+        4.71228
+      ]
+    }
+  },
+  {
+    "id": "43637087-d522-4a0d-abaf-250f813c44bc",
+    "name": "Universidad del Rosario",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08547,
+        4.64307
+      ]
+    }
+  },
+  {
+    "id": "89479242-1dc3-40ef-9a73-9f895075d156",
+    "name": "Universidad Externado de Colombia",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06515,
+        4.61284
+      ]
+    }
+  },
+  {
+    "id": "969bfb54-0ab7-43e7-989c-8baea31bd9b5",
+    "name": "Universidad de La Salle",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08266,
+        4.60822
+      ]
+    }
+  },
+  {
+    "id": "308a132c-40cc-42fd-87d4-d0cdce6754ac",
+    "name": "Universidad de San Buenaventura",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.09162,
+        4.6287
+      ]
+    }
+  },
+  {
+    "id": "ff93a05b-dd3b-44d6-ba52-63cc57a08466",
+    "name": "Universidad EAN",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07355,
+        4.63799
+      ]
+    }
+  },
+  {
+    "id": "39540421-6733-4c6c-b61e-b11da6362e8b",
+    "name": "Universidad Sergio Arboleda",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07282,
+        4.60958
+      ]
+    }
+  },
+  {
+    "id": "78b573f3-72f1-4605-af38-2110cd6ec147",
+    "name": "Universidad Jorge Tadeo Lozano",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08183,
+        4.5926
+      ]
+    }
+  },
+  {
+    "id": "11af4a02-2f38-475f-aaac-c8ed8adb7a30",
+    "name": "Universidad Pedagógica Nacional",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08663,
+        4.62751
+      ]
+    }
+  },
+  {
+    "id": "adceb0de-f304-499c-8ed2-1712fe23d71a",
+    "name": "Universidad Militar Nueva Granada",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.12675,
+        4.71249
+      ]
+    }
+  },
+  {
+    "id": "14767c88-b81b-4e60-95d5-79b1c0598a2c",
+    "name": "Universidad El Bosque",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07192,
+        4.63182
+      ]
+    }
+  },
+  {
+    "id": "46b61cc5-2943-444a-8911-7e26c84a835b",
+    "name": "Universidad Konrad Lorenz",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.04411,
+        4.60827
+      ]
+    }
+  },
+  {
+    "id": "b058e0f9-f821-49c7-8c81-9db1990ab466",
+    "name": "Universidad Católica de Colombia",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.07841,
+        4.61138
+      ]
+    }
+  },
+  {
+    "id": "40c3e233-4f65-4785-b6a1-90c4b38458b8",
+    "name": "Universidad Central",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.14028,
+        4.69594
+      ]
+    }
+  },
+  {
+    "id": "7d55b573-cba8-453d-994f-2c44cc38dff4",
+    "name": "Universidad de América",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05922,
+        4.6164
+      ]
+    }
+  },
+  {
+    "id": "e5a45bf8-bc2d-4453-bf94-6cafb40eb082",
+    "name": "Universidad Piloto de Colombia",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.09151,
+        4.61614
+      ]
+    }
+  },
+  {
+    "id": "bc3ed435-00b4-4c93-be3b-53cf01dca76f",
+    "name": "Universidad Santo Tomás",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.14464,
+        4.66577
+      ]
+    }
+  },
+  {
+    "id": "886dc2c7-12ff-49db-9b03-63b9fe1b705d",
+    "name": "Biblioteca Nacional de Colombia",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08547,
+        4.62209
+      ]
+    }
+  },
+  {
+    "id": "f21159d5-d9e5-4460-9983-52768309e8f6",
+    "name": "Palacio de Justicia",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.10129,
+        4.70874
+      ]
+    }
+  },
+  {
+    "id": "f6c13650-ab4c-4959-bd9c-44a917e87e35",
+    "name": "Hospital Militar Central",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08497,
+        4.59009
+      ]
+    }
+  },
+  {
+    "id": "5a450238-7e85-44e6-8baa-6afafb21a4e6",
+    "name": "Hospital Santa Fe de Bogotá",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.11807,
+        4.71823
+      ]
+    }
+  },
+  {
+    "id": "95adc9af-a0e8-4b0d-9d0f-ca0f93cc6fdf",
+    "name": "Hospital de La Misericordia",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.04962,
+        4.6668
+      ]
+    }
+  },
+  {
+    "id": "89b904c4-652f-4510-9ba4-c9b5a7879437",
+    "name": "Hospital Infantil Universitario",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05891,
+        4.61191
+      ]
+    }
+  },
+  {
+    "id": "8fd407ad-a15a-4a6a-879a-1dd65a90dbfe",
+    "name": "Hospital El Tunal",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.12658,
+        4.69851
+      ]
+    }
+  },
+  {
+    "id": "cf1c38b7-8c85-48d4-953a-6491cedf11f1",
+    "name": "Museo Geológico Nacional",
+    "description": "Institución de la ciudad",
+    "nature": "INSTITUTION",
+    "category": "INSTITUCION",
+    "attributes": {
+      "tipo": "institución"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.10235,
+        4.6298
+      ]
+    }
+  },
+  {
+    "id": "f3e8abd4-747c-4db9-b592-1a2278205f4a",
+    "name": "Centro Comercial Titán Plaza",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.11577,
+        4.68216
+      ]
+    }
+  },
+  {
+    "id": "e93f1817-b6a4-4f9f-b390-c6fcd390d3b3",
+    "name": "Centro Comercial El Retiro",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08111,
+        4.71025
+      ]
+    }
+  },
+  {
+    "id": "48c82da7-a619-4d24-b931-e264ab28cc38",
+    "name": "Centro Comercial Andino",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.11609,
+        4.65355
+      ]
+    }
+  },
+  {
+    "id": "11ae3d50-1526-4892-85c7-4edb788cbe90",
+    "name": "Centro Comercial Atlantis Plaza",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.09049,
+        4.71199
+      ]
+    }
+  },
+  {
+    "id": "8ee76c17-69c3-44b0-b356-d9ad609108a1",
+    "name": "Centro Comercial Hayuelos",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.04442,
+        4.68189
+      ]
+    }
+  },
+  {
+    "id": "850328f5-3186-4ef9-b6d0-02b8970f9c0a",
+    "name": "Centro Comercial Paseo Villa del Río",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.10476,
+        4.71378
+      ]
+    }
+  },
+  {
+    "id": "69d746a3-edeb-4671-a6a6-ddf3262d3399",
+    "name": "Centro Comercial Parque La Colina",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.11528,
+        4.72797
+      ]
+    }
+  },
+  {
+    "id": "df07ffcd-fb32-4bdb-ac3e-726f5b2e3bdc",
+    "name": "Centro Comercial Centro Mayor",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.06443,
+        4.70783
+      ]
+    }
+  },
+  {
+    "id": "ad4c12f8-b9ef-4a27-af9c-00e7b9306a19",
+    "name": "Centro Comercial Gran Estación Norte",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.0418,
+        4.65402
+      ]
+    }
+  },
+  {
+    "id": "dc1dd333-6244-4984-820c-62c1c230d0f7",
+    "name": "Centro Comercial Salitre Plaza",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05888,
+        4.7309
+      ]
+    }
+  },
+  {
+    "id": "80b225c2-4379-4680-afbb-9e7d25886c40",
+    "name": "Centro Comercial Bima",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.15,
+        4.63389
+      ]
+    }
+  },
+  {
+    "id": "0a3f3527-19c9-47ee-93cd-c55bdf85a83a",
+    "name": "Plaza de Mercado de Paloquemao",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.05779,
+        4.65816
+      ]
+    }
+  },
+  {
+    "id": "1ba74bb2-3d0d-4179-93be-4e07889d5c65",
+    "name": "Central de Abastos Corabastos",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.13837,
+        4.6015
+      ]
+    }
+  },
+  {
+    "id": "88592f56-24cb-49db-a3d3-ba1647583602",
+    "name": "Plaza de Mercado La Perseverancia",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.08034,
+        4.6872
+      ]
+    }
+  },
+  {
+    "id": "aa96f335-6133-4ff2-af56-4cedade1c84b",
+    "name": "Centro Comercial Metrópolis",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.14252,
+        4.62064
+      ]
+    }
+  },
+  {
+    "id": "1ef916e7-f199-420c-b479-c808285e5626",
+    "name": "Centro Comercial Colsubsidio 127",
+    "description": "Establecimiento comercial",
+    "nature": "COMMERCIAL_ESTABLISHMENT",
+    "category": "COMERCIO",
+    "attributes": {
+      "horario": "10:00 - 21:00"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -74.10595,
+        4.65345
+      ]
+    }
+  },
+  {
+    "id": "eb0e9aed-a702-4652-b6f4-329e07b00a0d",
+    "name": "Zona G",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.11488,
+            4.72894
+          ],
+          [
+            -74.07648,
+            4.72894
+          ],
+          [
+            -74.07648,
+            4.75604
+          ],
+          [
+            -74.11488,
+            4.75604
+          ],
+          [
+            -74.11488,
+            4.72894
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "67071e81-fe78-4ccc-8653-6ee5fdcf5b05",
+    "name": "Zona Rosa",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.06902,
+            4.56675
+          ],
+          [
+            -74.04356,
+            4.56675
+          ],
+          [
+            -74.04356,
+            4.59726
+          ],
+          [
+            -74.06902,
+            4.59726
+          ],
+          [
+            -74.06902,
+            4.56675
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "e342068c-8601-4240-99c9-0d1e122e04d3",
+    "name": "Centro Histórico de Bogotá",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.04707,
+            4.69614
+          ],
+          [
+            -74.02169,
+            4.69614
+          ],
+          [
+            -74.02169,
+            4.71247
+          ],
+          [
+            -74.04707,
+            4.71247
+          ],
+          [
+            -74.04707,
+            4.69614
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8bf4dedf-65b6-4480-b0a7-e61a6d64c4e8",
+    "name": "Centro Internacional",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.0553,
+            4.60469
+          ],
+          [
+            -74.03381,
+            4.60469
+          ],
+          [
+            -74.03381,
+            4.64253
+          ],
+          [
+            -74.0553,
+            4.64253
+          ],
+          [
+            -74.0553,
+            4.60469
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "c3b88f1a-c01a-4cd3-a138-62d4172ceb0a",
+    "name": "San Victorino",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.14828,
+            4.62629
+          ],
+          [
+            -74.10248,
+            4.62629
+          ],
+          [
+            -74.10248,
+            4.66039
+          ],
+          [
+            -74.14828,
+            4.66039
+          ],
+          [
+            -74.14828,
+            4.62629
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "4a14e20a-8856-439d-8e17-f50925b65575",
+    "name": "Eje Ambiental Avenida Jiménez",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.15619,
+            4.58174
+          ],
+          [
+            -74.13789,
+            4.58174
+          ],
+          [
+            -74.13789,
+            4.62063
+          ],
+          [
+            -74.15619,
+            4.62063
+          ],
+          [
+            -74.15619,
+            4.58174
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "af30971b-59a7-43ff-a559-394b809af1e2",
+    "name": "Estación de la Sabana",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.11151,
+            4.57625
+          ],
+          [
+            -74.06558,
+            4.57625
+          ],
+          [
+            -74.06558,
+            4.5949
+          ],
+          [
+            -74.11151,
+            4.5949
+          ],
+          [
+            -74.11151,
+            4.57625
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8c821dd2-468f-4cc2-ac1a-be9ab2bc638b",
+    "name": "Corredor Ambiental Quebrada La Vieja",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.08399,
+            4.55103
+          ],
+          [
+            -74.03483,
+            4.55103
+          ],
+          [
+            -74.03483,
+            4.57467
+          ],
+          [
+            -74.08399,
+            4.57467
+          ],
+          [
+            -74.08399,
+            4.55103
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "3e7f1dbf-b57d-4bf2-b3b7-2adf42a10fa4",
+    "name": "Humedal Juan Amarillo",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.10842,
+            4.64029
+          ],
+          [
+            -74.06777,
+            4.64029
+          ],
+          [
+            -74.06777,
+            4.6633
+          ],
+          [
+            -74.10842,
+            4.6633
+          ],
+          [
+            -74.10842,
+            4.64029
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "1fe854d9-42e9-4b8d-87e4-ae84460a2c74",
+    "name": "Humedal Santa María del Lago",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.07848,
+            4.5879
+          ],
+          [
+            -74.03578,
+            4.5879
+          ],
+          [
+            -74.03578,
+            4.61162
+          ],
+          [
+            -74.07848,
+            4.61162
+          ],
+          [
+            -74.07848,
+            4.5879
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "d849ac4b-80ac-434d-8fe3-df26eb2b93f2",
+    "name": "Humedal Tibabuyes",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.1487,
+            4.65999
+          ],
+          [
+            -74.11556,
+            4.65999
+          ],
+          [
+            -74.11556,
+            4.68415
+          ],
+          [
+            -74.1487,
+            4.68415
+          ],
+          [
+            -74.1487,
+            4.65999
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "c2d3bf71-ce4b-479b-ab3c-615b502b9ea4",
+    "name": "Humedal de Techo",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.07238,
+            4.68881
+          ],
+          [
+            -74.02703,
+            4.68881
+          ],
+          [
+            -74.02703,
+            4.71921
+          ],
+          [
+            -74.07238,
+            4.71921
+          ],
+          [
+            -74.07238,
+            4.68881
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "3ab746af-fdc5-4b43-a981-22b0df825d66",
+    "name": "Alameda El Porvenir",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.17,
+            4.55515
+          ],
+          [
+            -74.12299,
+            4.55515
+          ],
+          [
+            -74.12299,
+            4.58889
+          ],
+          [
+            -74.17,
+            4.58889
+          ],
+          [
+            -74.17,
+            4.55515
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "69436d9b-4c59-4de1-bb7b-b0abda392261",
+    "name": "Bulevar Niza",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.11238,
+            4.6274
+          ],
+          [
+            -74.06606,
+            4.6274
+          ],
+          [
+            -74.06606,
+            4.64932
+          ],
+          [
+            -74.11238,
+            4.64932
+          ],
+          [
+            -74.11238,
+            4.6274
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "ac4b385c-5926-4f5e-bf1d-9ecc8785a837",
+    "name": "Malecón de Fontibón",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.08967,
+            4.56594
+          ],
+          [
+            -74.05647,
+            4.56594
+          ],
+          [
+            -74.05647,
+            4.59609
+          ],
+          [
+            -74.08967,
+            4.59609
+          ],
+          [
+            -74.08967,
+            4.56594
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "8b4fad2d-0fac-4657-a21d-49d55518385f",
+    "name": "Cerros Orientales",
+    "description": "Zona de interés de la ciudad",
+    "nature": "ZONE_OF_INTEREST",
+    "category": "ZONA",
+    "attributes": {
+      "uso": "mixto"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.13195,
+            4.56362
+          ],
+          [
+            -74.11465,
+            4.56362
+          ],
+          [
+            -74.11465,
+            4.59216
+          ],
+          [
+            -74.13195,
+            4.59216
+          ],
+          [
+            -74.13195,
+            4.56362
+          ]
+        ]
+      ]
+    }
+  }
+]

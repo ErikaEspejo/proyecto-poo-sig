@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIG - Sistema de Información Geográfica</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="leaflet/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="login-view">
+        <div class="login-layout">
+            <aside class="login-brand">
+                <svg class="brand-cartography" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <g class="carto-grid">
+                        <path d="M0 60h600M0 140h600M0 220h600M0 300h600M0 380h600M0 460h600M0 540h600M0 620h600M0 700h600"/>
+                        <path d="M75 0v700M150 0v700M225 0v700M300 0v700M375 0v700M450 0v700M525 0v700"/>
+                    </g>
+                    <g class="carto-contours">
+                        <path d="M180 140 q60 -70 130 -20 q40 30 10 70 q-30 40 -80 30 q-50 -10 -60 -80z"/>
+                        <path d="M140 100 q90 -100 190 -30 q60 45 15 105 q-45 60 -120 45 q-75 -15 -85 -120z"/>
+                        <path d="M220 220 q50 -60 110 -20 q30 25 8 60 q-22 34 -66 24 q-44 -10 -52 -64z"/>
+                        <path d="M330 420 q60 -70 130 -20 q40 30 10 70 q-30 40 -80 30 q-50 -10 -60 -80z"/>
+                        <path d="M380 500 q80 -80 150 -20 q30 25 8 60 q-22 34 -66 24 q-44 -10 -52 -64z"/>
+                    </g>
+                    <g class="carto-pins">
+                        <path d="M360 560 l14 26 14-26 a16 16 0 1 0 -28 0z"/>
+                        <path d="M200 480 l12 22 12-22 a13 13 0 1 0 -24 0z"/>
+                    </g>
+                </svg>
+                <div class="brand-content">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h1>SIG</h1>
+                    <p class="brand-subtitle">Sistema de Información Geográfica</p>
+                    <div class="brand-divider"></div>
+                    <p class="brand-tagline">Gestione, consulte y visualice información geográfica de forma eficiente y segura.</p>
+                    <div class="brand-features">
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/>
+                                    <circle cx="12" cy="10" r="2.5"/>
+                                </svg>
+                            </span>
+                            <div class="feature-text"><strong>Visualización</strong><span>Interactiva</span></div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="7"/>
+                                    <path d="m20 20-3.5-3.5"/>
+                                </svg>
+                            </span>
+                            <div class="feature-text"><strong>Consultas</strong><span>Geográficas</span></div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m12 3 9 4.5-9 4.5L3 7.5z"/>
+                                    <path d="m3 12.5 9 4.5 9-4.5"/>
+                                    <path d="m3 17.5 9 4.5 9-4.5"/>
+                                </svg>
+                            </span>
+                            <div class="feature-text"><strong>Gestión de</strong><span>Entidades</span></div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
+                            </span>
+                            <div class="feature-text"><strong>Acceso</strong><span>Seguro</span></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="login-side">
+                <div class="login-card">
+                    <div class="login-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <circle cx="7.5" cy="16.5" r="4.5"/>
+                            <path d="m10.7 13.3 9.8-9.8"/>
+                            <path d="m16 6 3 3"/>
+                            <path d="m13 9 3 3"/>
+                        </svg>
+                    </div>
+                    <h2>Iniciar sesión</h2>
+                    <p class="login-card-subtitle">Acceda a su cuenta para continuar</p>
+                    <form id="login-form">
+                        <div class="field">
+                            <label for="username">Usuario</label>
+                            <div class="input-wrap">
+                                <span class="input-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="8" r="4"/>
+                                        <path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/>
+                                    </svg>
+                                </span>
+                                <input id="username" name="username" type="text" placeholder="Usuario" autocomplete="username" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="password">Contraseña</label>
+                            <div class="input-wrap">
+                                <span class="input-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="4" y="11" width="16" height="10" rx="2"/>
+                                        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                                    </svg>
+                                </span>
+                                <input id="password" name="password" type="password" placeholder="Contraseña" autocomplete="current-password" required>
+                                <button type="button" class="toggle-password" id="toggle-password" aria-label="Mostrar contraseña" tabindex="-1">
+                                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3l18 18"/>
+                                        <path d="M10.5 5.2A9.8 9.8 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-2.6 3.6"/>
+                                        <path d="M6.6 6.6A15.6 15.6 0 0 0 2 12s3.5 7 10 7a9.9 9.9 0 0 0 4.4-1"/>
+                                        <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p id="login-error" class="message error hidden"></p>
+                        <button type="submit" class="login-submit" id="login-submit">
+                            <span class="submit-label">Ingresar</span>
+                            <span class="submit-spinner" aria-hidden="true"></span>
+                        </button>
+                    </form>
+                </div>
+                <footer class="login-footer">
+                    <span>SIG - Sistema de Información Geográfica</span>
+                    <span>·</span>
+                    <span>Proyecto académico - Universidad Distrital Francisco José de Caldas</span>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <section id="app-view" class="hidden">
+        <aside id="sidebar">
+            <header id="sidebar-header">
+                <div class="app-identity">
+                    <span class="app-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+                        </svg>
+                    </span>
+                    <div class="app-title">
+                        <strong>SIG</strong>
+                        <span>Sistema de Información Geográfica</span>
+                    </div>
+                </div>
+                <div id="user-bar">
+                    <div class="user-info">
+                        <span class="user-avatar" id="user-avatar"></span>
+                        <div class="user-meta">
+                            <strong id="current-user"></strong>
+                            <span id="current-role" class="role-badge"></span>
+                        </div>
+                    </div>
+                    <button id="logout-btn" type="button" class="button-quiet" title="Cerrar sesión">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                            <path d="m16 17 5-5-5-5"/>
+                            <path d="M21 12H9"/>
+                        </svg>
+                        <span>Salir</span>
+                    </button>
+                </div>
+            </header>
+
+            <nav id="tabs" class="tabs" aria-label="Navegación principal">
+                <button type="button" id="tab-search" class="tab active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="m20 20-3.5-3.5"/>
+                    </svg>
+                    Búsqueda
+                </button>
+                <button type="button" id="tab-register" class="tab hidden">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    Registrar
+                </button>
+            </nav>
+
+            <section id="search-tab" class="tab-panel">
+                <form id="query-form" class="filters">
+                    <div class="filter-group">
+                        <div class="field">
+                            <label for="q-text">Buscar</label>
+                            <div class="input-wrap">
+                                <span class="input-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="7"/>
+                                        <path d="m20 20-3.5-3.5"/>
+                                    </svg>
+                                </span>
+                                <input id="q-text" type="text" placeholder="Nombre o descripción...">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="q-category">Categoría</label>
+                            <select id="q-category">
+                                <option value="">Todas</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="q-attribute">Atributo</label>
+                            <div class="input-wrap">
+                                <span class="input-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.6 13.4 10.6 23l-7-7L13.6 6"/>
+                                        <path d="m9 15 3 3"/>
+                                        <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L18 8l-3-3z"/>
+                                    </svg>
+                                </span>
+                                <input id="q-attribute" type="text" placeholder="Ej. turismo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group spatial">
+                        <div class="subsection-title">
+                            <span class="subsection-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/>
+                                    <circle cx="12" cy="10" r="2.5"/>
+                                </svg>
+                            </span>
+                            Búsqueda por ubicación
+                        </div>
+                        <div class="row-2">
+                            <div class="field">
+                                <label for="q-lat">Latitud</label>
+                                <input id="q-lat" type="number" step="any" placeholder="-90 a 90">
+                            </div>
+                            <div class="field">
+                                <label for="q-lon">Longitud</label>
+                                <input id="q-lon" type="number" step="any" placeholder="-180 a 180">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="q-radius">Radio</label>
+                            <div class="input-wrap with-suffix">
+                                <input id="q-radius" type="number" step="any" placeholder="Radio de búsqueda">
+                                <span class="input-suffix">km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row search-actions">
+                        <button type="submit" class="button-primary" id="query-submit">Buscar</button>
+                        <button type="button" id="query-clear" class="button-link">Limpiar</button>
+                    </div>
+                </form>
+
+                <div class="results-head">
+                    <h2>Resultados</h2>
+                    <span id="results-count" class="results-count hidden"></span>
+                </div>
+                <ul id="entity-list" class="entity-list"></ul>
+                <div id="list-status" class="list-status hidden"></div>
+                <div id="empty-state" class="empty-state hidden">
+                    <span class="empty-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="7"/>
+                            <path d="m20 20-3.5-3.5"/>
+                        </svg>
+                    </span>
+                    <p class="empty-title">No se encontraron entidades</p>
+                    <p class="empty-hint">Intenta modificar los criterios de búsqueda.</p>
+                </div>
+            </section>
+
+            <section id="register-tab" class="tab-panel hidden">
+                <h2 id="form-title">Registrar entidad</h2>
+                <form id="entity-form" class="entity-form">
+                    <input type="hidden" id="entity-id">
+                    <div class="field">
+                        <label for="e-name">Nombre *</label>
+                        <input id="e-name" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="e-description">Descripción</label>
+                        <textarea id="e-description" rows="2"></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="e-nature">Naturaleza *</label>
+                        <select id="e-nature">
+                            <option value="POINT_OF_INTEREST">Punto de interés</option>
+                            <option value="ROAD">Vía</option>
+                            <option value="NEIGHBORHOOD">Barrio</option>
+                            <option value="INSTITUTION">Institución</option>
+                            <option value="COMMERCIAL_ESTABLISHMENT">Establecimiento comercial</option>
+                            <option value="ZONE_OF_INTEREST">Zona de interés</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="e-category">Categoría *</label>
+                        <select id="e-category"></select>
+                    </div>
+                    <div class="field">
+                        <label for="e-attributes">Atributos (clave: valor por línea)</label>
+                        <textarea id="e-attributes" rows="3" placeholder="altura: 196 m"></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="e-type">Tipo de geometría *</label>
+                        <select id="e-type">
+                            <option value="Point">Punto</option>
+                            <option value="LineString">Línea</option>
+                            <option value="Polygon">Polígono</option>
+                        </select>
+                    </div>
+                    <p class="hint">Haz clic en el mapa para definir la geometría.</p>
+                    <p id="geometry-status" class="hint"></p>
+                    <div class="row">
+                        <button type="button" id="geometry-clear" class="button-link">Borrar geometría</button>
+                        <button type="button" id="geometry-finish" class="button-secondary hidden">Terminar línea/polígono</button>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="button-primary">Guardar</button>
+                        <button type="button" id="form-cancel" class="button-link hidden">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </aside>
+
+        <main id="map">
+            <div id="map-info" class="map-overlay map-info hidden"></div>
+            <div id="map-legend" class="map-overlay map-legend">
+                <span class="legend-item"><span class="legend-dot legend-point"></span>Puntos</span>
+                <span class="legend-item"><span class="legend-dot legend-line"></span>Vías</span>
+                <span class="legend-item"><span class="legend-dot legend-area"></span>Zonas</span>
+            </div>
+        </main>
+    </section>
+
+    <script src="leaflet/leaflet.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
