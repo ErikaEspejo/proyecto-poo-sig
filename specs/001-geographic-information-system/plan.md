@@ -6,13 +6,13 @@
 
 ## Summary
 
-Build a self-contained academic Geographic Information System (GIS) as a single Spring Boot application with a vanilla JavaScript + Leaflet frontend. Users authenticate with preloaded local accounts (consultation and administrator) through a login screen. Authorized users manage geographic entities (Point, LineString, Polygon) stored in local JSON files behind repository abstractions. All users can query entities by category, descriptive attributes, or proximity (coordinate + radius) and view results on an offline local vector base map. The frontend presents a sidebar-based interface with navigation tabs (search / registration), results as cards with Spanish nature/category labels, an empty state, and a map with legend, visible-entity counter, tooltips, and popups. Validation rules and domain invariants live in the domain layer; persistence writes are atomic to preserve data integrity.
+Build a self-contained academic Geographic Information System (GIS) as a single Spring Boot application with a vanilla JavaScript + Leaflet frontend. Users authenticate with preloaded local accounts (consultation and administrator) through a login screen. Authorized users manage geographic entities (Point, LineString, Polygon) stored in local JSON files behind repository abstractions. All users can query entities by category, descriptive attributes, or proximity (coordinate + radius) and view results on a map with two interchangeable base maps: OpenStreetMap (online, optional, with attribution) and the bundled local vector map (offline, required, automatic fallback). The frontend presents a sidebar-based interface with navigation tabs (search / registration), results as cards with Spanish nature/category labels, an empty state, and a map with base-map selector, cursor-coordinate control, legend, visible-entity counter, tooltips, and popups. Administrators define geometry by clicking the map (Point replace-on-click, LineString/Polygon vertex capture, polygon auto-close). Validation rules and domain invariants live in the domain layer; persistence writes are atomic to preserve data integrity. The map enhancement (FR-037..FR-045) is a presentation-layer change: domain, application services, REST contracts, permissions, and JSON persistence are unchanged.
 
 ## Technical Context
 
 **Language/Version**: Java 21
 
-**Primary Dependencies**: Spring Boot, Spring Web, Jackson; frontend uses vanilla HTML/CSS/JS with Leaflet (bundled locally as static assets) and a custom CSS theme shared by the login and application views; GeoJSON for geometry representation and the base map.
+**Primary Dependencies**: Spring Boot, Spring Web, Jackson; frontend uses vanilla HTML/CSS/JS with Leaflet (bundled locally as static assets) and a custom CSS theme shared by the login and application views; GeoJSON for geometry representation and the local base map. OpenStreetMap standard tiles are loaded directly by the browser (client-side) as an optional online base map; no proxying and no additional service.
 
 **Storage**: Local JSON files managed through repository abstractions (Jackson for serialization/deserialization). Seed data and the base map are bundled as resources.
 
@@ -24,9 +24,9 @@ Build a self-contained academic Geographic Information System (GIS) as a single 
 
 **Performance Goals**: No strict performance targets; dataset is small (tens to low hundreds of entities). Correctness, clarity, maintainability, and meaningful OOP demonstration take priority over scale.
 
-**Constraints**: Self-contained and offline-capable; no external services, tile servers, or APIs; no database, JPA, Hibernate, or Spring Data; no frontend framework; user-facing interface in Spanish; code/specs/documentation in English.
+**Constraints**: Self-contained and offline-capable (the local vector base map works without internet; OpenStreetMap is an optional online base map with an automatic fallback to the local map); no database, JPA, Hibernate, or Spring Data; no frontend framework; no external services other than the standard OpenStreetMap tile provider; user-facing interface in Spanish; code/specs/documentation in English.
 
-**Scale/Scope**: Academic scope; small dataset; two user types (consultation, administrator); predefined entity natures and categories.
+**Scale/Scope**: Academic scope; small dataset; two user types (consultation, administrator); predefined entity natures and categories. Map enhancement scope: two base maps (OSM online optional + local offline required), automatic fallback, base-map selector, cursor coordinates, click-based geometry definition; domain, use cases, REST contracts, permissions, and JSON persistence are unchanged.
 
 ## Constitution Check
 
@@ -45,7 +45,7 @@ Build a self-contained academic Geographic Information System (GIS) as a single 
 | Behavior-oriented tests (domain rules, invalid cases, boundary cases) | PASS (test plan covers these) |
 | Encapsulation, invariants protected in domain, no unrestricted mutation | PASS (domain design) |
 | No artificial abstractions; SOLID applied pragmatically | PASS |
-| Every new dependency has a concrete purpose; prefer stdlib | PASS (leaflet only; map data via stdlib/Jackson) |
+| Every new dependency has a concrete purpose; prefer stdlib | PASS (leaflet only; map data via stdlib/Jackson; OSM is a client-side tile layer, not a project dependency) |
 | Academic traceability (UML, use cases, docs synchronized with design) | PASS (documentation artifacts planned) |
 
 No violations requiring justification; **Complexity Tracking** is left empty.

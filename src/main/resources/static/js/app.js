@@ -10,9 +10,18 @@ const state = {
     drawVertices: [],
     drawMarker: null,
     drawPreview: null,
+    drawingLocked: false,
+    prevGeometryType: "Point",
     map: null,
     entityLayer: null,
-    basemapLoaded: false,
+    osmLayer: null,
+    localLayer: null,
+    baseControl: null,
+    activeBasemap: "osm",
+    osmConsecutiveErrors: 0,
+    fallbackActive: false,
+    coordinatesControl: null,
+    basemapNoticeTimer: null,
     selectedId: null,
     layersById: {},
 };
@@ -126,7 +135,9 @@ const els = {
     geometryClear: document.getElementById("geometry-clear"),
     geometryFinish: document.getElementById("geometry-finish"),
     formCancel: document.getElementById("form-cancel"),
+    formStatus: document.getElementById("form-status"),
     mapInfo: document.getElementById("map-info"),
+    basemapNotice: document.getElementById("basemap-notice"),
 };
 
 function show(view) {
@@ -146,7 +157,12 @@ async function api(path, options = {}) {
     if (state.token) {
         headers.Authorization = "Bearer " + state.token;
     }
-    const response = await fetch(path, { ...options, headers });
+    let response;
+    try {
+        response = await fetch(path, { ...options, headers });
+    } catch (err) {
+        throw new Error("No se pudo conectar con el servidor. Inténtelo de nuevo.");
+    }
     let body = null;
     const text = await response.text();
     if (text) {
@@ -232,26 +248,145 @@ function initMap() {
     if (state.map) {
         return;
     }
-    state.map = L.map("map").setView([4.6, -74.07], 12);
+    state.map = L.map("map", { maxZoom: 19 }).setView([4.6, -74.07], 12);
     state.entityLayer = L.layerGroup().addTo(state.map);
     state.map.on("click", onMapClick);
-    loadBasemap();
+
+    state.osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contribuidores',
+    });
+
+    state.localLayer = L.geoJSON(null, {
+        style: { color: "#94a3b8", weight: 1, fillColor: "#e8edf2", fillOpacity: 0.6 },
+    });
+
+    state.baseControl = L.control
+        .layers(
+            {
+                "OpenStreetMap": state.osmLayer,
+                "Mapa local": state.localLayer,
+            },
+            null,
+            { position: "topleft" }
+        )
+        .addTo(state.map);
+
+    state.osmLayer.addTo(state.map);
+    state.activeBasemap = "osm";
+    setupOsmFallback(state.osmLayer);
+    setupCoordinatesControl();
+    state.map.on("baselayerchange", onBasemapUserChange);
+    loadLocalBasemap();
 }
 
-async function loadBasemap() {
-    if (state.basemapLoaded) {
-        return;
-    }
+async function loadLocalBasemap() {
     try {
         const geojson = await api("/api/map/basemap");
-        L.geoJSON(geojson, {
-            style: { color: "#94a3b8", weight: 1, fillColor: "#e8edf2", fillOpacity: 0.6 },
-        }).addTo(state.map);
-        state.map.fitBounds(L.geoJSON(geojson).getBounds());
-        state.basemapLoaded = true;
+        state.localLayer.addData(geojson);
+        if (state.activeBasemap === "local") {
+            const bounds = state.localLayer.getBounds();
+            if (bounds.isValid()) {
+                state.map.fitBounds(bounds);
+            }
+        }
     } catch (err) {
-        showMessage(els.listStatus, "No se pudo cargar el mapa base: " + err.message, "error");
+        showMessage(els.listStatus, "No se pudo cargar el mapa base local.", "error");
     }
+}
+
+function setupOsmFallback(layer) {
+    layer.on("tileerror", () => {
+        if (state.activeBasemap !== "osm") {
+            return;
+        }
+        state.osmConsecutiveErrors += 1;
+        if (state.osmConsecutiveErrors >= 3) {
+            activateFallback();
+        }
+    });
+    layer.on("tileload", () => {
+        if (state.activeBasemap !== "osm") {
+            return;
+        }
+        state.osmConsecutiveErrors = 0;
+    });
+}
+
+function activateFallback() {
+    if (state.fallbackActive) {
+        return;
+    }
+    state.fallbackActive = true;
+    switchBaseMap("local");
+    showBasemapNotice("No fue posible cargar OpenStreetMap. Se activó el mapa local.");
+}
+
+function switchBaseMap(name) {
+    if (name === "local" && state.activeBasemap !== "local") {
+        state.activeBasemap = "local";
+        if (state.map.hasLayer(state.osmLayer)) {
+            state.map.removeLayer(state.osmLayer);
+        }
+        if (!state.map.hasLayer(state.localLayer)) {
+            state.localLayer.addTo(state.map);
+        }
+    } else if (name === "osm" && state.activeBasemap !== "osm") {
+        state.activeBasemap = "osm";
+        if (state.map.hasLayer(state.localLayer)) {
+            state.map.removeLayer(state.localLayer);
+        }
+        state.osmLayer.addTo(state.map);
+        state.osmConsecutiveErrors = 0;
+        state.fallbackActive = false;
+        hideBasemapNotice();
+    }
+}
+
+function onBasemapUserChange(event) {
+    if (event.layer === state.osmLayer) {
+        state.activeBasemap = "osm";
+        state.osmConsecutiveErrors = 0;
+        state.fallbackActive = false;
+        hideBasemapNotice();
+    } else {
+        state.activeBasemap = "local";
+    }
+}
+
+function setupCoordinatesControl() {
+    const CoordinatesControl = L.Control.extend({
+        options: { position: "bottomleft" },
+        onAdd: function () {
+            const div = L.DomUtil.create("div", "map-coordinates");
+            div.textContent = "Latitud: -- | Longitud: --";
+            this._div = div;
+            return div;
+        },
+    });
+    state.coordinatesControl = new CoordinatesControl().addTo(state.map);
+    state.map.on("mousemove", (event) => {
+        state.coordinatesControl._div.textContent =
+            "Latitud: " + event.latlng.lat.toFixed(6) + " | Longitud: " + event.latlng.lng.toFixed(6);
+    });
+    state.map.on("mouseout", () => {
+        state.coordinatesControl._div.textContent = "Latitud: -- | Longitud: --";
+    });
+}
+
+function showBasemapNotice(text) {
+    els.basemapNotice.textContent = text;
+    els.basemapNotice.classList.remove("hidden");
+    clearTimeout(state.basemapNoticeTimer);
+    state.basemapNoticeTimer = setTimeout(() => {
+        els.basemapNotice.classList.add("hidden");
+    }, 6000);
+}
+
+function hideBasemapNotice() {
+    clearTimeout(state.basemapNoticeTimer);
+    els.basemapNotice.classList.add("hidden");
 }
 
 async function loadCategories() {
@@ -407,6 +542,15 @@ function renderMap(entities) {
         els.mapInfo.textContent = entities.length + " entidad" + (entities.length === 1 ? "" : "es") + " visible" + (entities.length === 1 ? "" : "s");
         els.mapInfo.classList.remove("hidden");
     }
+    restoreDrawState();
+}
+
+function restoreDrawState() {
+    if (state.geometry) {
+        renderGeometryPreview(state.geometry);
+    } else if (state.drawVertices.length > 0) {
+        refreshDrawPreview(els.eType.value);
+    }
 }
 
 function selectEntity(id) {
@@ -509,10 +653,12 @@ function startEdit(entity) {
         .map(([key, value]) => key + ": " + value)
         .join("\n");
     els.eType.value = entity.geometry.type;
+    state.prevGeometryType = entity.geometry.type;
     state.geometry = entity.geometry;
     state.drawVertices = [];
+    state.drawingLocked = entity.geometry.type !== "Point";
+    renderGeometryPreview(entity.geometry);
     updateGeometryStatus();
-    els.geometryFinish.classList.add("hidden");
     els.formCancel.classList.remove("hidden");
     switchTab("register");
 }
@@ -524,10 +670,17 @@ function resetForm() {
     state.editingId = null;
     state.geometry = null;
     state.drawVertices = [];
+    state.drawingLocked = false;
+    state.prevGeometryType = "Point";
     clearDrawPreview();
+    hideMessage(els.formStatus);
     updateGeometryStatus();
-    els.geometryFinish.classList.add("hidden");
     els.formCancel.classList.add("hidden");
+}
+
+function hideMessage(el) {
+    el.classList.add("hidden");
+    el.textContent = "";
 }
 
 async function saveEntity(event) {
@@ -535,7 +688,7 @@ async function saveEntity(event) {
     const id = els.entityId.value;
     const geometry = state.geometry;
     if (!geometry) {
-        showMessage(els.listStatus, "Debe definir la geometría haciendo clic en el mapa.", "error");
+        showMessage(els.formStatus, "Debe definir la geometría haciendo clic en el mapa.", "error");
         return;
     }
     const body = {
@@ -556,7 +709,7 @@ async function saveEntity(event) {
         switchTab("search");
         await loadEntities();
     } catch (err) {
-        showMessage(els.listStatus, err.message, "error");
+        showMessage(els.formStatus, err.message, "error");
     }
 }
 
@@ -577,7 +730,18 @@ function parseAttributes(text) {
     return attributes;
 }
 
+function isDrawModeActive() {
+    return (
+        state.role === "ADMINISTRATOR" &&
+        !els.registerTab.classList.contains("hidden") &&
+        !state.drawingLocked
+    );
+}
+
 function onMapClick(event) {
+    if (!isDrawModeActive()) {
+        return;
+    }
     const type = els.eType.value;
     const latLng = event.latlng;
     if (type === "Point") {
@@ -587,15 +751,52 @@ function onMapClick(event) {
         };
         if (state.drawMarker) {
             state.entityLayer.removeLayer(state.drawMarker);
+            state.drawMarker = null;
         }
-        state.drawMarker = L.marker(latLng).addTo(state.entityLayer);
+        state.drawMarker = L.circleMarker([latLng.lat, latLng.lng], {
+            radius: 8,
+            color: HIGHLIGHT_COLOR,
+            weight: 3,
+            fillColor: HIGHLIGHT_COLOR,
+            fillOpacity: 0.5,
+        }).addTo(state.entityLayer);
         updateGeometryStatus();
         return;
     }
     state.drawVertices.push([round(latLng.lng), round(latLng.lat)]);
     refreshDrawPreview(type);
     updateGeometryStatus();
-    els.geometryFinish.classList.remove("hidden");
+}
+
+function countDistinctVertices(vertices) {
+    const seen = new Set();
+    for (const [lon, lat] of vertices) {
+        seen.add(lon + "," + lat);
+    }
+    return seen.size;
+}
+
+function renderGeometryPreview(geometry) {
+    clearDrawPreview();
+    if (!geometry) {
+        return;
+    }
+    if (geometry.type === "Point") {
+        const [lon, lat] = geometry.coordinates;
+        state.drawMarker = L.circleMarker([lat, lon], {
+            radius: 8,
+            color: HIGHLIGHT_COLOR,
+            weight: 3,
+            fillColor: HIGHLIGHT_COLOR,
+            fillOpacity: 0.5,
+        }).addTo(state.entityLayer);
+    } else if (geometry.type === "LineString") {
+        const latLngs = geometry.coordinates.map(([lon, lat]) => [lat, lon]);
+        state.drawPreview = L.polyline(latLngs, { color: HIGHLIGHT_COLOR, weight: 3 }).addTo(state.entityLayer);
+    } else if (geometry.type === "Polygon") {
+        const ring = geometry.coordinates[0].map(([lon, lat]) => [lat, lon]);
+        state.drawPreview = L.polygon(ring, { color: HIGHLIGHT_COLOR, fillOpacity: 0.2 }).addTo(state.entityLayer);
+    }
 }
 
 function refreshDrawPreview(type) {
@@ -622,13 +823,13 @@ function finishDraw() {
     const type = els.eType.value;
     if (type === "LineString") {
         if (state.drawVertices.length < 2) {
-            showMessage(els.listStatus, "Una línea requiere al menos dos puntos.", "error");
+            showMessage(els.formStatus, "Una línea requiere al menos dos puntos.", "error");
             return;
         }
-        state.geometry = { type: "LineString", coordinates: state.drawVertices };
+        state.geometry = { type: "LineString", coordinates: state.drawVertices.slice() };
     } else if (type === "Polygon") {
-        if (state.drawVertices.length < 3) {
-            showMessage(els.listStatus, "Un polígono requiere al menos tres puntos.", "error");
+        if (countDistinctVertices(state.drawVertices) < 3) {
+            showMessage(els.formStatus, "Un polígono requiere al menos tres puntos distintos.", "error");
             return;
         }
         const ring = state.drawVertices.slice();
@@ -639,17 +840,18 @@ function finishDraw() {
         }
         state.geometry = { type: "Polygon", coordinates: [ring] };
     }
-    els.geometryFinish.classList.add("hidden");
     state.drawVertices = [];
+    state.drawingLocked = true;
+    renderGeometryPreview(state.geometry);
     updateGeometryStatus();
 }
 
 function clearGeometry() {
     state.geometry = null;
     state.drawVertices = [];
+    state.drawingLocked = false;
     clearDrawPreview();
     updateGeometryStatus();
-    els.geometryFinish.classList.add("hidden");
 }
 
 function clearDrawPreview() {
@@ -669,10 +871,16 @@ function updateGeometryStatus() {
     if (state.geometry) {
         const count = type === "Point" ? 1 : type === "Polygon" ? state.geometry.coordinates[0].length : state.geometry.coordinates.length;
         els.geometryStatus.textContent = "Geometría definida (" + label + ", " + count + " coordenadas).";
+        if (type !== "Point") {
+            els.geometryStatus.textContent += " Usa 'Borrar geometría' para redefinirla.";
+        }
+        els.geometryFinish.classList.add("hidden");
     } else if (state.drawVertices.length > 0) {
         els.geometryStatus.textContent = state.drawVertices.length + " punto(s) añadido(s). Haz clic para agregar más.";
+        els.geometryFinish.classList.remove("hidden");
     } else {
         els.geometryStatus.textContent = "Sin geometría definida.";
+        els.geometryFinish.classList.add("hidden");
     }
 }
 
@@ -688,10 +896,27 @@ els.tabRegister.addEventListener("click", () => switchTab("register"));
 els.queryForm.addEventListener("submit", runQuery);
 els.queryClear.addEventListener("click", clearQuery);
 els.entityForm.addEventListener("submit", saveEntity);
-els.formCancel.addEventListener("click", resetForm);
+els.formCancel.addEventListener("click", cancelEdit);
 els.geometryClear.addEventListener("click", clearGeometry);
 els.geometryFinish.addEventListener("click", finishDraw);
-els.eType.addEventListener("change", clearGeometry);
+els.eType.addEventListener("change", onGeometryTypeChange);
+
+function cancelEdit() {
+    resetForm();
+    switchTab("search");
+}
+
+function onGeometryTypeChange(event) {
+    const hasGeometry = state.geometry !== null || state.drawVertices.length > 0;
+    if (hasGeometry && state.prevGeometryType !== els.eType.value) {
+        if (!confirm("Cambiar el tipo de geometría borrará la geometría actual. ¿Desea continuar?")) {
+            els.eType.value = state.prevGeometryType;
+            return;
+        }
+    }
+    state.prevGeometryType = els.eType.value;
+    clearGeometry();
+}
 
 (function restoreSession() {
     const token = localStorage.getItem("sig.token");

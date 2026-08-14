@@ -4,8 +4,9 @@ Versión: 1.0.0
 Fecha: 2026-08-13
 
 Sistema de Información Geográfica académico (Java 21, Spring Boot 3). Aplicación web autónoma:
-mapa base local de Colombia, entidades geográficas (puntos, líneas y polígonos), consultas
-combinadas, autenticación por roles y persistencia en archivos JSON locales.
+mapa base local de Colombia con capa opcional de OpenStreetMap en línea (con fallback automático),
+entidades geográficas (puntos, líneas y polígonos), consultas combinadas, autenticación por roles y
+persistencia en archivos JSON locales.
 
 ---
 
@@ -17,7 +18,7 @@ combinadas, autenticación por roles y persistencia en archivos JSON locales.
 | Maven | 3.9 o superior (o usar el *Maven Wrapper* incluido) |
 | Navegador | Cualquiera moderno (Chrome, Edge, Firefox) |
 | Puerta de red | 8080 libre |
-| Internet | No requerido para la aplicación (Leaflet y mapa base son locales) |
+| Internet | No requerido para la aplicación principal (Leaflet y mapa base son locales) |
 
 Verificar:
 
@@ -27,6 +28,10 @@ mvn -version
 ```
 
 > En Windows, el comando de Maven puede ser `mvn` o `mvn.cmd`, según la instalación.
+>
+> **Internet y OpenStreetMap**: la capa "OpenStreetMap" (imagen de calles) requiere conexión.
+> Sin internet la aplicación conmuta automáticamente al mapa local de Colombia y todo sigue
+> funcionando.
 
 ## 2. Descarga y estructura
 
@@ -119,7 +124,15 @@ de entonces los cambios realizados desde la interfaz se guardan ahí y persisten
 
 ### 5.2 Explorar el mapa
 
-- El mapa base muestra los departamentos de Colombia (local, sin internet).
+- El mapa se abre con la capa **OpenStreetMap** (imágenes de calles; requiere internet).
+- En la esquina superior izquierda, bajo los controles de zoom, hay un selector con dos capas:
+  **OpenStreetMap** y **Mapa local** (departamentos de Colombia, 100% offline). Al cambiar de capa
+  se conserva el centro y el zoom.
+- **Si OpenStreetMap no puede cargar**, el sistema conmuta automáticamente a "Mapa local", muestra
+  el aviso "No fue posible cargar OpenStreetMap. Se activó el mapa local." y no reintenta en la misma
+  sesión; el resto de la aplicación sigue funcionando con normalidad.
+- En la esquina inferior izquierda se muestran las **coordenadas del cursor** en tiempo real
+  (Latitud/Longitud, 6 decimales); al salir del mapa vuelven a un estado neutro.
 - Cada entidad se dibuja según su tipo: **punto** (marcador), **línea** o **polígono** (área).
 - Al hacer clic en una entidad se abre un detalle con nombre, descripción, categoría, naturaleza y
   atributos.
@@ -144,12 +157,22 @@ El panel de administración está disponible únicamente para el rol **Administr
 oculta para usuarios de consulta y el servidor además lo impide con `403`).
 
 - **Registrar**: completar nombre, descripción, naturaleza, categoría y atributos opcionales; dibujar
-  la geometría sobre el mapa (punto, línea o polígono) y guardar.
-- **Actualizar**: seleccionar una entidad, modificar sus datos/geometría y guardar.
+  la geometría haciendo clic en el mapa y guardar.
+- **Dibujar geometría con clic**: con la pestaña Registrar/Edición abierta, elegir el tipo:
+  - **Punto**: un solo clic lo coloca (o reemplaza) y queda definido.
+  - **Línea**: hacer clic para añadir vértices (mínimo 2) y pulsar **Terminar línea/polígono**.
+  - **Polígono**: hacer clic para añadir vértices (mínimo 3 distintos); el anillo se cierra solo.
+  - **Borrar geometría** limpia lo dibujado y permite volver a dibujar. Al cambiar el tipo con
+    geometría pendiente se pide confirmación.
+  - Fuera de esta pestaña el clic no dibuja: se conservan la selección, los popups y los tooltips.
+- **Actualizar**: seleccionar una entidad, modificar sus datos/geometría y guardar. Para volver a
+  dibujar una línea/polígono existente usar **Borrar geometría**; un punto se puede reemplazar con
+  un clic.
 - **Eliminar**: seleccionar una entidad y confirmar su eliminación.
 
-Los mensajes de error se muestran en español (p. ej. geometría inválida, campos obligatorios,
-credenciales inválidas, sin permisos).
+Los mensajes de error se muestran en español dentro del propio formulario (p. ej. geometría inválida,
+campos obligatorios, credenciales inválidas, sin permisos). Si el guardado es rechazado, el
+formulario y la geometría dibujada se conservan para corregirlos.
 
 ## 6. API REST (referencia rápida)
 

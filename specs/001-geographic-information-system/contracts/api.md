@@ -129,7 +129,9 @@ List predefined categories (FR-013).
 |------|---------|
 | `/` | Frontend entry point (`index.html`) |
 | `/css/`, `/js/`, `/leaflet/` | Vanilla JS app and bundled offline Leaflet assets |
-| `/data/colombia-boundaries.geojson` | Local vector base map (offline) |
+| `/data/colombia-boundaries.geojson` | Local vector base map (offline, automatic fallback) |
+
+The optional OpenStreetMap base layer (FR-037) is loaded directly by the browser from the standard public tile provider `https://tile.openstreetmap.org/{z}/{x}/{y}.png`; it is not proxied through this API and is not part of the REST contract. This endpoint and the REST contract are unchanged.
 
 ## Error contract
 

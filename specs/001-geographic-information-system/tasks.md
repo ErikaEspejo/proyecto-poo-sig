@@ -164,6 +164,21 @@ description: "Task list template for feature implementation"
 
 ---
 
+## Phase 9: Map enhancement — base layers, fallback, coordinates, and click-based drawing (post-implementation, after Phase 8)
+
+**Purpose**: Frontend-only enhancement per FR-037..FR-045: OpenStreetMap as an optional online base map with an explicit fallback policy to the bundled local map, a base-map selector (`L.control.layers`), a cursor-coordinate control, and click-based geometry definition. No changes to domain, application services, REST contracts, permissions, or JSON persistence.
+
+- [ ] T054 Update `spec.md` (amend FR-016; add FR-037..FR-045, User Story 4, assumptions, clarifications), `plan.md`, `tasks.md`, `quickstart.md`, `contracts/api.md` note, `checklists/requirements.md`, and `data-model.md` note
+- [ ] T055 Implement dual base maps in `src/main/resources/static/js/app.js`: OSM `tileLayer` (maxZoom 19, attribution) as initial layer when tiles can load + bundled local vector layer as alternative; `L.control.layers` selector with Spanish options "OpenStreetMap"/"Mapa local"; no map rebuild, center/zoom and entity layers preserved on switch; automatic fallback reflected in the selector
+- [ ] T056 Implement the fallback policy in `src/main/resources/static/js/app.js`: `tileerror` counter of consecutive failures, `tileload` resets it, fallback at 3 consecutive errors activates "Mapa local" exclusively with the Spanish notice "No fue posible cargar OpenStreetMap. Se activó el mapa local."; no automatic return during the session; manual OSM re-selection resets the counter and starts a new attempt; single isolated error does not trigger fallback
+- [ ] T057 Implement the cursor-coordinate control (Leaflet `L.Control`, `mousemove`/`mouseout`, six decimals, neutral state, both roles, non-blocking) in `src/main/resources/static/js/app.js` and `src/main/resources/static/css/style.css`
+- [ ] T058 Implement click-based geometry definition gating in `src/main/resources/static/js/app.js`: draw mode active only for administrators with the register/edit view open and the form in geometry-definition mode; Point replace-on-click; LineString >= 2 coordinates; Polygon >= 3 distinct points with single auto-close; "Terminar línea/polígono" validation with Spanish messages; GeoJSON `[longitude, latitude]`
+- [ ] T059 Implement draw-state preservation and cleanup in `src/main/resources/static/js/app.js` and `index.html`: preserve vertices/preview/type/form/edit mode across base-map switches; "Borrar geometría" clears only temporal geometry; cancel clears and deactivates draw mode; rejected save keeps form+geometry and shows the Spanish error in the register view; edit loads geometry as editable preview; geometry-type change asks for confirmation when vertices would be lost
+- [ ] T060 Update academic docs: `docs/use-cases.md` (UC-02, UC-08), `docs/design.md`, `docs/manual-de-instalacion-y-uso.md`, `docs/traceability.md`
+- [ ] T061 Run `./mvnw test` and `./mvnw verify`; rebuild the jar, restart the app, and perform manual browser verification of the acceptance scenarios (OSM visible with attribution, fallback, selector, coordinates, drawing, state preservation)
+
+---
+
 ## Dependencies & Execution Order
 
 ### Phase Dependencies
@@ -176,6 +191,7 @@ description: "Task list template for feature implementation"
 - **Polish (Final Phase)**: Depends on all desired user stories being complete
 - **UI/UX Polish (Phase 7)**: Post-implementation; depends on all phases above being complete; presentation-only
 - **Convergence review fixes (Phase 8)**: Post-implementation; depends on Phase 7; correctness/documentation, no new features
+- **Map enhancement (Phase 9)**: Post-implementation; depends on Phase 8; presentation-only (frontend base maps, fallback, coordinates, click-based drawing)
 
 ### User Story Dependencies
 

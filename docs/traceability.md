@@ -53,7 +53,7 @@ Final report mapping OOP concepts and the constitution v2.0.0 principles to conc
 | IV Domain concepts over primitives | `Coordinate`, `Category`, enums instead of raw primitives |
 | V Explicit and meaningful errors | typed exceptions (`InvalidGeometryException`, `InvalidEntityException`, `EntityNotFoundException`, `InvalidCredentialsException`, `AuthenticationRequiredException`, `UnauthorizedOperationException`) mapped to Spanish user messages; technical details logged |
 | VII Behavior-oriented testing | 81 behavior tests: domain rules, invalid/boundary cases, permission checks, AND-combined query criteria; no coverage metric chasing |
-| VIII Clear responsibility boundaries | controllers (HTTP) / repositories (JSON persistence) / services (orchestration) / domain (rules) |
+| VIII Clear responsibility boundaries | controllers (HTTP) / repositories (JSON persistence) / services (orchestration) / domain (rules); the map-enhancement (OpenStreetMap optional layer, automatic fallback, live cursor coordinates, click-based drawing) lives entirely in the presentation layer (`static/js/app.js`, `index.html`, `css/style.css`) without touching domain/use cases/CRUD/permissions/JSON persistence |
 | IX Academic traceability | this report + PlantUML models `docs/uml/classes.puml` and `docs/uml/use-cases.puml` + `docs/use-cases.md` |
 | Persistence integrity | atomic writes; `JsonDataStoreIntegrityTest` proves a failed write leaves prior data intact |
 

@@ -106,4 +106,4 @@ Bundled under `src/main/resources/data/`:
 - `users.json`: at least one consultation user and one administrator.
 - `categories.json`: predefined categories.
 - `entities.json`: an academic seed dataset of 200 entities covering all six natures, the six categories, and all three geometry types (100 points, 41 LineStrings, 59 polygons), demonstrating the query, map, and CRUD scenarios (FR-028).
-- `colombia-boundaries.geojson`: local vector base map (FR-016).
+- `colombia-boundaries.geojson`: local vector base map (FR-016); it remains the required offline base map and the automatic fallback when the optional OpenStreetMap online base layer (FR-037..FR-040) cannot load. The base-map enhancement is presentation-layer only and does not change this data model.

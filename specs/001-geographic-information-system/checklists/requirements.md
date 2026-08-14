@@ -36,3 +36,4 @@
 - Post-analyze refinements applied: WGS84 declared (FR-004), query fields clarified (FR-008), radius unit in kilometers (FR-009)
 - Post-implementation refinement: FR-030 to FR-035 added to reflect the implemented UI (login screen, sidebar layout and tabs, result cards, empty state, map tooltips/legend/counter)
 - Post-convergence review refinement: FR-036 added (combined query criteria use AND semantics); spec status moved to Implemented with a provenance note (FR-001..FR-029 pre-implementation, FR-030..FR-036 post-implementation)
+- Post-implementation map-enhancement refinement (2026-08-13): FR-016 amended (local vector map is the required offline base map and automatic fallback); FR-037..FR-045 added (OpenStreetMap optional online base layer, fallback policy, base-map selector, cursor coordinates, click-based geometry, out-of-scope list); User Story 4 added; assumptions and clarifications updated

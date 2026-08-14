@@ -17,10 +17,33 @@ Documentation of the implemented behavior (matches `spec.md` user stories and `c
 
 - **Actors**: Consultation user, Administrator
 - **Flow**:
-  1. The system loads the local vector base map (Colombia departments, offline) and the list of entities.
+  1. The system loads the entity list and both base maps: OpenStreetMap tiles (online, initial layer) and the local vector map (Colombia departments).
   2. The user views each entity on the map: Point as marker, LineString as line, Polygon as area.
   3. The user clicks an entity to see its descriptive information.
-- **Result**: Full read-only visualization (FR-015, FR-016).
+  4. While moving the cursor, the map shows live WGS84 coordinates in a control (Latitud/Longitud, 6 decimals; neutral state when the cursor leaves the map).
+- **Result**: Full read-only visualization with online imagery and live coordinates (FR-015, FR-016, FR-037, FR-041).
+
+## UC-09 Switch base map
+
+- **Actors**: Consultation user, Administrator
+- **Trigger**: User selects a base layer, or OpenStreetMap tiles fail
+- **Flow**:
+  1. The layer selector (top-left, `L.control.layers`) offers "OpenStreetMap" (online) and "Mapa local" (offline vector).
+  2. The user switches layers; center and zoom are preserved.
+  3. If 3 consecutive OpenStreetMap tile errors occur, the system automatically switches to "Mapa local" and shows a non-blocking notice ("No fue posible cargar OpenStreetMap. Se activó el mapa local.").
+  4. Re-selecting OpenStreetMap manually resets the failure counter and retries.
+- **Result**: The map always renders; online imagery is optional and never blocks the core functionality (FR-016, FR-037..FR-040).
+
+## UC-10 Define geometry by clicking (Administrator)
+
+- **Actors**: Administrator
+- **Trigger**: User registers/edits an entity with the Register/Edit tab open and geometry not locked
+- **Flow**:
+  1. The user chooses the geometry type and clicks the map to add points (Point: a single click defines/replaces it; LineString/Polygon: clicks accumulate vertices with a live preview).
+  2. "Terminar línea/polígono" commits the geometry (≥2 points for a line; ≥3 distinct points for a polygon, ring closed automatically); the geometry is then locked.
+  3. "Borrar geometría" clears the temporary geometry and re-enables clicking; changing the geometry type with pending geometry asks for confirmation.
+  4. Outside this mode (search tab, consultation role, or locked geometry) clicks never add geometry, so selection, popups and tooltips keep working.
+- **Result**: Geometry is captured by clicking with validation feedback in the form; a rejected save keeps the form and geometry intact (FR-042..FR-045).
 
 ## UC-03 Register an entity (Administrator)
 
@@ -70,14 +93,14 @@ Documentation of the implemented behavior (matches `spec.md` user stories and `c
 ## UC-08 Load base map
 
 - **Actors**: Consultation user, Administrator
-- **Flow**: `GET /api/map/basemap` returns the bundled simplified Colombia GeoJSON.
-- **Result**: Map renders offline without external tiles (FR-016).
+- **Flow**: `GET /api/map/basemap` returns the bundled simplified Colombia GeoJSON; the frontend renders it as the local vector layer registered in the selector.
+- **Result**: The local vector map renders offline and is the automatic fallback when OpenStreetMap cannot load (FR-016, FR-038).
 
 ## Priority / Coverage
 
 | Use case | User story | Priority |
 |----------|-----------|----------|
 | UC-01, UC-08 | US3 | P2 |
-| UC-02 | US2 | P1 |
-| UC-03, UC-04, UC-05 | US1 | P1 |
+| UC-02, UC-09 | US2 / US4 | P1 |
+| UC-03, UC-04, UC-05, UC-10 | US1 / US4 | P1 |
 | UC-06, UC-07 | US2 | P1 |

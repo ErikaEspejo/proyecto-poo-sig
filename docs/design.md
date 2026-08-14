@@ -6,8 +6,10 @@ Repositorio: https://github.com/ErikaEspejo/proyecto-poo-sig
 
 Este documento describe el diseño del **Sistema de Información Geográfica (SIG)** académico
 implementado en Java 21. El sistema permite consultar, visualizar y administrar entidades
-geográficas (puntos, líneas y polígonos) sobre un mapa base local de Colombia, sin depender de
-servicios externos.
+geográficas (puntos, líneas y polígonos). El mapa ofrece dos capas base seleccionables: un mapa
+vectorial local de Colombia (obligatorio y 100% offline) y OpenStreetMap en línea (opcional, con
+conmutación automática al mapa local si no puede cargar); la funcionalidad principal nunca depende
+de servicios externos.
 
 Documentos relacionados:
 
@@ -31,9 +33,10 @@ Documentos relacionados:
 
 ## 2. Alcance
 
-El sistema cubre los requisitos funcionales FR-001 a FR-036 (ver `spec.md`). Está fuera de alcance:
+El sistema cubre los requisitos funcionales FR-001 a FR-045 (ver `spec.md`). Está fuera de alcance:
 
-- Mapas de teselas en línea (OpenStreetMap, etc.); se usa un mapa base vectorial local simplificado.
+- Requerir internet para el funcionamiento principal: OpenStreetMap es una capa opcional con
+  fallback automático al mapa vectorial local (FR-016, FR-037..FR-040).
 - Bases de datos relacionales o Spring Data.
 - Autenticación por terceros; se usa autenticación local con tokens en memoria.
 - Servicios externos de geocodificación.
@@ -196,9 +199,28 @@ GeoJSON, y son reutilizados por persistencia y presentación (una única fuente 
 ## 8. Frontend
 
 - `static/index.html` + `static/js/app.js` + `static/css/style.css` (español).
-- Leaflet distribuido localmente en `static/leaflet/` (sin CDN; funciona sin internet).
-- El mapa base es el GeoJSON simplificado de departamentos de Colombia servido por
-  `BaseMapController` desde `data/colombia-boundaries.geojson` (FR-016).
+- Leaflet distribuido localmente en `static/leaflet/` (sin CDN; la funcionalidad principal funciona
+  sin internet).
+- **Capas base** (FR-016, FR-037): el mapa inicial es OpenStreetMap (teselas cliente directas al
+  proveedor público, con atribución obligatoria). Una capa vectorial local con el GeoJSON simplificado
+  de departamentos de Colombia —servido por `BaseMapController` desde `data/colombia-boundaries.geojson`—
+  queda registrada en un selector `L.control.layers` ("OpenStreetMap" / "Mapa local") disponible para
+  todo rol. Cambiar de capa conserva centro y zoom.
+- **Política de fallback** (FR-039, FR-040): si se producen 3 errores consecutivos al cargar teselas
+  de OpenStreetMap, el mapa conmuta automáticamente a "Mapa local", muestra un aviso no bloqueante
+  en español y no reintenta en la misma sesión. Cada tesela cargada resetea el contador; volver a
+  seleccionar OpenStreetMap manualmente también lo resetea y permite un nuevo intento. Un error
+  aislado no activa el fallback.
+- **Coordenadas del cursor** (FR-041): un control en la esquina inferior izquierda muestra en tiempo
+  real `Latitud`/`Longitud` (WGS84, 6 decimales) mientras el cursor está sobre el mapa, y un estado
+  neutral cuando sale.
+- **Geometría por clic** (FR-042..FR-045): el modo de dibujo solo está activo para el rol
+  administrador con la pestaña Registrar/Edición abierta y la geometría desbloqueada. Punto: un clic
+  lo define o reemplaza. Línea/Polígono: los clics acumulan vértices con vista previa; "Terminar
+  línea/polígono" consolida (≥2 puntos; ≥3 puntos distintos y cierre de anillo automático) y bloquea
+  el dibujo; "Borrar geometría" lo desbloquea. Fuera de ese modo el clic conserva el comportamiento
+  normal del mapa (selección, popups, tooltips). El estado de dibujo y los vértices se conservan al
+  cambiar de pestaña y al redibujar el mapa.
 - Las entidades se dibujan según su tipo: `Point` como marcador, `LineString` como línea y `Polygon`
   como área (FR-015).
 - El panel de consulta permite combinar categoría, texto, atributo y proximidad; los resultados se
@@ -251,8 +273,12 @@ Contrato completo en `specs/001-geographic-information-system/contracts/api.md`.
    corrompa los datos previos (verificado por `JsonDataStoreIntegrityTest`).
 5. **Semántica AND en consultas**: cada criterio restringe el resultado; `matchedBy` documenta qué
    criterios matchearon, evitando falsos negativos en la interfaz.
-6. **Mapa sin internet**: Leaflet y el mapa base son locales; la aplicación es completamente
-   autónoma (cumple US3/FR-016).
+6. **Mapa autónomo con mejora opcional en línea**: Leaflet, el mapa base local y la funcionalidad
+   principal son completamente locales; OpenStreetMap se añade como capa cliente opcional (sin
+   proxy, sin dependencia de build) cuyo fallback automático garantiza US3/FR-016.
+7. **Dibujo por clic acoplado a la pestaña**: para evitar clics accidentales, el modo de dibujo solo
+   se activa en la pestaña Registrar/Edición con la geometría desbloqueada; así la selección, los
+   popups y los tooltips siguen funcionando en el resto de la aplicación.
 
 ## 12. Pruebas
 
